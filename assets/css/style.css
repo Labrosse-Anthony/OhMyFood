@@ -35,15 +35,16 @@ body {
     background-color: #F6F6F6;
     justify-content: center;
     text-align: center;
+    padding-bottom: 58px;
 }
 
 .about__title {
     font-size: 24px;
-    padding-top: 40px;
 }
 
 .about__subtitle {
     font-size: 18px;
+    margin-bottom: 58px;
 }
 
 .about__btn {
