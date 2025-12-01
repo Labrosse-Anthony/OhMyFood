@@ -9,13 +9,15 @@
     <!-- Titre-->
     <title>Ohmyfood</title>
     <!--Css-->
-    <link rel="stylesheet" href="assets/sass/index.css">
+    <link rel="stylesheet" href="sass/pages/index.css">
     <!-- Google fonts and fontawesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/images/logo_noir.svg" type="image/x-icon">
     <script src="https://kit.fontawesome.com/e9ad2cc302.js" crossorigin="anonymous"></script>
 </head>
+
 <body class="body">
     <div>
         <header class="header">
@@ -26,7 +28,7 @@
             <!-- Section Localisation -->
             <div class="location">
                 <i class="fa-solid fa-location-dot location__icon"></i>
-                <h2 class="location__text">Paris, Belleville</h2>
+                <h2 class="location__txt">Paris, Belleville</h2>
             </div>
             <!-- Section A Propos -->
             <section class="about">
@@ -36,18 +38,21 @@
             </section>
             <!-- Section Fonctionnement -->
             <section class="function">
-                <div class="container">
-                    <h2 class="function__title">Fonctionnement</h2>
+                <h2 class="function__title">Fonctionnement</h2>
+                <div class="function__container">
                     <ol class="function__steps">
                         <li class="function__step">
+                            <span class="function__number">1</span>
                             <i class="function__icon fas fa-mobile-alt"></i>
                             <span class="text">Choisissez un restaurant</span>
                         </li>
                         <li class="function__step">
+                            <span class="function__number">2</span>
                             <i class="function__icon fas fa-list-ul"></i>
                             <span class="text">Composez votre menu</span>
                         </li>
                         <li class="function__step">
+                            <span class="function__number">3</span>
                             <i class="function__icon fas fa-store"></i>
                             <span class="text">Dégustez au restaurant</span>
                         </li>
@@ -55,7 +60,11 @@
                 </div>
             </section>
             <!-- Section Restaurants -->
-            <section>
+            <section class="restaurants" id="restaurants">
+                <div class="container">
+                <h2 class="restaurants__title">Restaurants</h2>
+                    <div class="cards">
+                        <a></a>
 
             </section>
         </main>
