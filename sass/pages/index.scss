@@ -1,15 +1,29 @@
 
-/*General*/  
-
+/***** Variables *****/
+  /***** Couleurs *****/
+  $light-gray : #EAEAEA;
+  $gray : #353535;
+  $background-color : #F6F6F6;
+  $white : #FFF;
+  $primary : #9356DC;
+  $pink : #FF79DA;
+  $black : #000;
+  $green : #99E2D0;
+  $green-font : #008766;
+  $mid-gray : #7E7E7E;
+  $backgournd-about : #F3F3F3;
+  
+/* General */  
 body {
     margin : 0;
     font-family : Roboto;
 }
 
+/*En Tete*/
 .header {
     position: relative;
     z-index: 1;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.26);
     padding: 16px;
     display: flex;
     flex-direction: row;
@@ -25,12 +39,13 @@ body {
 
 /*Localisation*/
 .location {
-    background-color: #EAEAEA;
+    background-color: $light-gray;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px 0px rgba (0, 0, 0, 0,4);
+
 
     &__icon {
         margin-right: 17px;
@@ -39,6 +54,7 @@ body {
     &__txt {
         font-size: 16px;
         font-weight: 500;
+        color: $gray;
     }
 }
 
@@ -46,7 +62,7 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: #F3F3F3;
+    background-color: $backgournd-about;
     padding: 35px 25px 60px 25px;
     position: relative;
 
@@ -58,25 +74,25 @@ body {
 
     &__subtitle {
         font-size: 16px;
-        font-weight: 3OO;
+        font-weight: 300;
         margin-bottom: 35px;
     }
 
     &__btn {
         font-size: 16px;
         font-weight: 500;
-        color: #FFF;
+        color: $white;
         padding: 16px 24px;
         border: none;
         border-radius: 25px;
-        background: linear-gradient(#FF79DA, #9356DC);
+        background: linear-gradient($pink, $primary);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
     }
 }
 
 /*Fonctionnement*/
 .function {
-    background-color: #FFF;
+    background-color: $white;
     padding: 38px 20px 28px 20px;
 
     &__title {
@@ -91,9 +107,9 @@ body {
         height: 74px;
         width: 100%;
         border-radius: 25px;
-        background-color: #EAEAEA;
+        background-color: $light-gray;
         padding-left: 5Opx;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
     }
 
@@ -111,17 +127,101 @@ body {
        width: 24px;
        height: 24px;
        position: absolute;
-       color: #FFF;
-       background-color: #9356DC;
+       color: $white;
+       background-color: $primary;
        border-radius: 25px;
        left: -10px;
     }
 
     &__icon {
-        color: #7E7E7E;
+        color: $mid-gray;
         height: 20px;
         width: 13px;
         padding-right: 20px;
         padding-left: 30px;
     }
 }
+
+/*Restaurants*/
+.restaurants {
+    background-color: $background-color;
+    padding: 2rem 1rem;
+
+    &__title {
+        margin-top: 0;
+    }
+}
+
+.card {
+    padding: 0px;
+    text-decoration: none;
+    color: $black;
+
+    &__restaurant {
+        border-radius: 15px;
+        display : flex;
+        flex-direction: column;
+        margin-bottom : 18px;
+        width : 100%;
+        background-color: $white;
+        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+    }
+
+    &__img__content {
+        position : relative ;
+    }
+
+    &__img {
+        height : 200px;
+        width: 100%;
+        display : block;
+        object-fit: cover;
+    }
+
+    &__new {
+        color : $green-font;
+        background-color: $green;
+        width: 80px;
+        height: 29px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
+        right : 15px;
+        top : 15px;
+        z-index : 1;
+        position : absolute;
+    }
+
+    &new--hidden {
+        visibility: hidden;
+    }
+  
+  
+    &__content {
+        display : flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding : 13px 15px;
+        background-color: $white;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+    
+    &__title {
+        font-size: 16px;
+        font-weight: 700;
+    }
+    
+    &__subtitle {
+        font-size:15px;
+        font-weight: 300;
+        margin-top : 5px;
+    }
+}
+
+
+
