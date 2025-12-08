@@ -5,6 +5,9 @@ body {
   margin: 0;
   font-family: Roboto;
 }
+body ol {
+  padding: 0;
+}
 
 /*En Tete*/
 .header {
@@ -30,7 +33,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 4px 0px rgba 0, 0, 0, 0, 4;
+  box-shadow: 0px 4px 4px 0px rgba 0, 0, 0, 0, 4, inset 0px 4px 4px 0px rgba 0, 0, 0, 0, 4;
 }
 .location__icon {
   margin-right: 17px;
@@ -91,7 +94,6 @@ body {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .function__steps {
-  padding-left: 0;
   padding-left: 10px;
 }
 .function__number {
@@ -186,4 +188,37 @@ body {
   font-size: 15px;
   font-weight: 300;
   margin-top: 5px;
+}
+
+.footer {
+  width: 100%;
+  padding: 22px 25px;
+  background-color: #353535;
+  color: #FFF;
+}
+.footer p, .footer i, .footer a {
+  color: #FFF;
+  text-decoration: none;
+}
+.footer__logo {
+  margin: 0 0 16px 0;
+  filter: invert(100%);
+}
+.footer__bloc {
+  display: flex;
+  flex-direction: column;
+}
+.footer__nav {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.footer--icons {
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 13px;
+  font-size: 13px;
 }/*# sourceMappingURL=index.css.map */

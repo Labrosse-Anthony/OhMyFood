@@ -17,6 +17,10 @@
 body {
     margin : 0;
     font-family : Roboto;
+
+    ol {
+        padding: 0;
+    }
 }
 
 /*En Tete*/
@@ -44,7 +48,8 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 4px 4px 0px rgba (0, 0, 0, 0,4);
+    box-shadow: 0px 4px 4px 0px rgba (0, 0, 0, 0,4), 
+        inset 0px 4px 4px 0px rgba (0, 0, 0, 0,4);
 
 
     &__icon {
@@ -114,7 +119,6 @@ body {
     }
 
     &__steps {
-        padding-left: 0;
         padding-left: 10px;
     }
 
@@ -223,5 +227,41 @@ body {
     }
 }
 
+.footer {
+    width: 100%;
+    padding: 22px 25px;
+    background-color: $gray;
+    color: $white;
 
+    & p , i , a {
+        color: $white;
+        text-decoration: none;
+    }
+
+    &__logo {
+        margin: 0 0 16px 0;
+        filter: invert(100%);
+    }
+
+    &__bloc {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+    }
+
+    &--icons {
+        color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 16px;
+        height: 13px;
+        font-size: 13px;
+    }
+}
 
