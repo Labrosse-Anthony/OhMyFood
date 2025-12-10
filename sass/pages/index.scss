@@ -23,7 +23,7 @@ body {
     }
 }
 
-/*En Tete*/
+/* En Tete */
 .header {
     position: relative;
     z-index: 1;
@@ -123,18 +123,18 @@ body {
     }
 
     &__number {
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       font-size: 14px;
-       font-weight: 500;
-       width: 24px;
-       height: 24px;
-       position: absolute;
-       color: $white;
-       background-color: $primary;
-       border-radius: 25px;
-       left: -10px;
+        position: absolute;
+        color: $white;
+        background-color: $primary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 500;
+        width: 24px;
+        height: 24px;
+        border-radius: 25px;
+        left: -10px;
     }
 
     &__icon {
@@ -157,17 +157,17 @@ body {
 }
 
 .card {
+    color: $black;
     padding: 0px;
     text-decoration: none;
-    color: $black;
 
     &__restaurant {
+        background-color: $white;
         border-radius: 15px;
         display : flex;
         flex-direction: column;
         margin-bottom : 18px;
         width : 100%;
-        background-color: $white;
         box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
         overflow: hidden;
     }
@@ -179,24 +179,23 @@ body {
     &__img {
         height : 200px;
         width: 100%;
-        display : block;
-        object-fit: cover;
+        
     }
 
     &__new {
         color : $green-font;
         background-color: $green;
-        width: 80px;
-        height: 29px;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        z-index : 1;
+        position : absolute;
+        width: 80px;
+        height: 29px;
         border-radius: 3px;
         right : 15px;
         top : 15px;
-        z-index : 1;
-        position : absolute;
     }
 
     &new--hidden {
@@ -223,7 +222,6 @@ body {
     &__subtitle {
         font-size:15px;
         font-weight: 300;
-        margin-top : 5px;
     }
 }
 
@@ -252,16 +250,16 @@ body {
         display: flex;
         align-items: center;
         gap: 7px;
-    }
 
-    &--icons {
-        color: $white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 16px;
-        height: 13px;
-        font-size: 13px;
+        &--icons {
+            color: $white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 16px;
+            height: 13px;
+            font-size: 13px;
+        }
     }
 }
 
