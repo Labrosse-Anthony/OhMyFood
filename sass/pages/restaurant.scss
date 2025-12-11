@@ -227,12 +227,16 @@
     & p , i , a {
         color: $white;
         text-decoration: none;
-        padding-bottom: 16px;
+        margin: 0;
+        margin-bottom: 7px;
     }
 
     &__logo {
-        margin: 0 0 16px 0;
-        filter: invert(100%);
+        font-family: Shrikhand;
+        font-size: 28px;
+        font-weight: 400;
+        color: $white;
+        margin: 0 0 24px 0;
     }
 
     &__bloc {
@@ -243,17 +247,16 @@
     &__nav {
         display: flex;
         align-items: center;
+        gap: 11px;
         
-
         &--icons {
             color: $white;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 16px;
-            height: 13px;
-            font-size: 13px;
-            margin-right: 10px;
+            width: 15px;
+            height: 15px;
+            font-size: 15px;
         }
     }
 }

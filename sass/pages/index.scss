@@ -264,11 +264,17 @@ body {
     & p , i , a {
         color: $white;
         text-decoration: none;
+        margin: 0;
+        margin-bottom: 7px;
     }
 
     &__logo {
-        margin: 0 0 16px 0;
-        filter: invert(100%);
+        font-family: Shrikhand;
+        font-size: 28px;
+        font-weight: 400;
+        color: $white;
+        margin: 0 0 24px 0;
+
     }
 
     &__bloc {
@@ -279,16 +285,16 @@ body {
     &__nav {
         display: flex;
         align-items: center;
-        gap: 7px;
+        gap: 11px;
 
         &--icons {
             color: $white;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 16px;
-            height: 13px;
-            font-size: 13px;
+            width: 15px;
+            height: 15px;
+            font-size: 15px;
         }
     }
 }
