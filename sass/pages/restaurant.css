@@ -31,7 +31,6 @@ body {
 /* Image */
 .restaurant {
   position: relative;
-  /* Menu */
 }
 .restaurant__img {
   height: 275px;
@@ -39,6 +38,21 @@ body {
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.restaurant__like {
+  position: relative;
+}
+.restaurant__like--empty {
+  width: 30px;
+  height: 80px;
+  position: absolute;
+  cursor: pointer;
+}
+.restaurant__like--full {
+  width: 30px;
+  height: 80px;
+  position: absolute;
+  cursor: pointer;
 }
 .restaurant__page {
   background-color: #F6F6F6;
@@ -62,8 +76,11 @@ body {
 }
 .restaurant__like {
   position: relative;
+  background-color: #F6F6F6;
+  border: none;
 }
 
+/* Menu */
 .menu__card {
   display: flex;
   flex-direction: column;
@@ -171,7 +188,6 @@ body {
 
 /* footer */
 .footer {
-  width: 87%;
   padding: 22px 25px;
   background-color: #353535;
   color: #FFF;

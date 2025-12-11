@@ -53,7 +53,24 @@
         object-fit: cover;
     }
 
-/* Menu */
+    &__like {
+    position : relative;
+  
+        &--empty {
+            width : 30px;
+            height : 80px;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        &--full {
+            width : 30px;
+            height : 80px;
+            position: absolute;
+            cursor: pointer;
+        }
+    }
+
     &__page {
         background-color : $background-color;
         position : relative;
@@ -79,10 +96,13 @@
 
     &__like {
         position : relative;
+        background-color: $background-color;
+        border: none;
     }
   
 }
 
+/* Menu */
 .menu__card {
   display : flex;
   flex-direction : column;
@@ -200,7 +220,6 @@
 
 /* footer */
 .footer {
-    width: 87%;
     padding: 22px 25px;
     background-color: $gray;
     color: $white;

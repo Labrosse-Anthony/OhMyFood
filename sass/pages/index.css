@@ -1,29 +1,30 @@
+@charset "UTF-8";
 /***** Variables *****/
 /***** Couleurs *****/
 /* General */
 body {
   margin: 0;
-  font-family: Roboto;
+  font-family: Roboto; /* Définit la police principale */
 }
 body ol {
-  padding: 0;
+  padding: 0; /* Réinitialise le padding par défaut des listes ordonnées */
 }
 
 /* En Tete */
 .header {
-  position: relative;
-  z-index: 3;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.26);
+  position: relative; /* Positionnement relatif pour que d'autres éléments puissent s'y positionner */
+  z-index: 3; /* Assure que le header est au-dessus du reste du contenu */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
   padding: 16px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap; /* Empêche le retour à la ligne des éléments enfants */
 }
 .header__logo {
   height: 36px;
-  max-width: 100%;
+  max-width: 100%; /* Assure que le logo ne dépasse pas la largeur du conteneur */
 }
 
 /*Localisation*/
@@ -31,11 +32,11 @@ body ol {
   background-color: #EAEAEA;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0px 4px 4px rgba 0, 0, 0, 0.2;
+  align-items: center; /* Centre verticalement les icônes et le texte */
+  justify-content: center; /* Centre horizontalement l'ensemble */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   position: relative;
-  z-index: 2;
+  z-index: 2; /* Positionné sous le header */
 }
 .location__icon {
   margin-right: 17px;
@@ -73,6 +74,7 @@ body ol {
   border-radius: 25px;
   background: linear-gradient(#FF79DA, #9356DC);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 }
 
 /*Fonctionnement*/
@@ -123,16 +125,39 @@ body ol {
 /*Restaurants*/
 .restaurants {
   background-color: #F6F6F6;
-  padding: 2rem 1rem;
+  padding: 40px 20px;
 }
 .restaurants__title {
   margin-top: 0;
+}
+.restaurants__like {
+  position: relative; /* Conteneur du pictogram cœur. Pour ositionner les cœurs l'un sur l'autre. */
+  padding: 0 15px 0 0;
+}
+.restaurants__like--empty {
+  height: 35px;
+  width: 30px;
+  position: absolute; /* Positionnement absolu par rapport au parent .restaurants__like */
+  top: 50%; /* Déplace le haut du cœur à 50% de la hauteur du conteneur */
+  right: 0; /* Aligne le cœur sur le bord droit du conteneur */
+  transform: translateY(-50%); /* Centrage Vertical : Remonte le cœur de la moitié de sa propre hauteur le coeur */
+  cursor: pointer;
+}
+.restaurants__like--full {
+  height: 35px;
+  width: 30px;
+  position: absolute; /* Positionnement absolu par rapport au parent .restaurants__like */
+  top: 50%; /* Déplace le haut du cœur à 50% de la hauteur du conteneur */
+  right: 0; /* Aligne le cœur sur le bord droit du conteneur */
+  transform: translateY(-50%); /* Centrage Vertical : Remonte le cœur de la moitié de sa propre hauteur le coeur */
+  cursor: pointer;
 }
 
 .card {
   color: #000;
   padding: 0px;
   text-decoration: none;
+  height: 25Opx;
 }
 .card__restaurant {
   background-color: #FFF;
@@ -148,8 +173,10 @@ body ol {
   position: relative;
 }
 .card__img {
-  height: 200px;
+  height: 180px;
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .card__new {
   color: #008766;
@@ -174,22 +201,25 @@ body ol {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 13px 15px;
+  padding: 20px 15px;
   background-color: #FFF;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 .card__title {
-  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 18px;
   font-weight: 700;
 }
 .card__subtitle {
   font-size: 15px;
   font-weight: 300;
+  margin-bottom: 0;
 }
 
+/* footer */
 .footer {
-  width: 100%;
   padding: 22px 25px;
   background-color: #353535;
   color: #FFF;
