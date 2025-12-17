@@ -1,0 +1,14 @@
+.function {
+    &__step:hover &__icon {
+        color: $primary;   
+        filter : brightness(1.10);
+        transition: color 300ms ease-in-out;
+        }
+    
+        &:active{
+            color: $primary;
+            filter : brightness(0,90);
+            transform: translateY(1px);
+            transition: color 300ms ease-in-out;
+        }
+}    

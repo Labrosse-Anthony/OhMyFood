@@ -10,6 +10,32 @@ body ol {
   padding: 0; /* Réinitialise le padding par défaut des listes ordonnées */
 }
 
+/* Animations */
+.about__btn {
+  transition: all 600ms ease-in-out;
+}
+.about__btn:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+.about__btn:active {
+  filter: brightness(0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
+}
+
+.function__step:hover .function__icon {
+  color: #9356DC;
+  filter: brightness(1.1);
+  transition: color 300ms ease-in-out;
+}
+.function:active {
+  color: #9356DC;
+  filter: brightness(0, 90);
+  transform: translateY(1px);
+  transition: color 300ms ease-in-out;
+}
+
 /* En Tete */
 .header {
   position: relative; /* Positionnement relatif pour que d'autres éléments puissent s'y positionner */
@@ -72,6 +98,7 @@ body ol {
   padding: 16px 24px;
   border: none;
   border-radius: 25px;
+  text-decoration: none;
   background: linear-gradient(#FF79DA, #9356DC);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   cursor: pointer;
@@ -99,6 +126,7 @@ body ol {
 }
 .function__steps {
   padding-left: 10px;
+  cursor: pointer;
 }
 .function__number {
   position: absolute;
@@ -131,26 +159,62 @@ body ol {
   margin-top: 0;
 }
 .restaurants__like {
-  position: relative; /* Conteneur du pictogram cœur. Pour ositionner les cœurs l'un sur l'autre. */
-  padding: 0 15px 0 0;
+  height: 2rem;
+  width: 2rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
-.restaurants__like--empty {
-  height: 35px;
-  width: 30px;
-  position: absolute; /* Positionnement absolu par rapport au parent .restaurants__like */
-  top: 50%; /* Déplace le haut du cœur à 50% de la hauteur du conteneur */
-  right: 0; /* Aligne le cœur sur le bord droit du conteneur */
-  transform: translateY(-50%); /* Centrage Vertical : Remonte le cœur de la moitié de sa propre hauteur le coeur */
-  cursor: pointer;
+
+/* Checkbox cachée */
+input[type=checkbox].checkbox__like {
+  display: none;
 }
+
+/* État cliqué (checked) */
+input[type=checkbox].checkbox__like:checked + label.restaurants__like .restaurants__like--full {
+  opacity: 1;
+  transform: scale(1);
+}
+input[type=checkbox].checkbox__like:checked + label.restaurants__like .restaurants__like--empty {
+  opacity: 0;
+  transform: scale(0.6);
+}
+
 .restaurants__like--full {
-  height: 35px;
-  width: 30px;
-  position: absolute; /* Positionnement absolu par rapport au parent .restaurants__like */
-  top: 50%; /* Déplace le haut du cœur à 50% de la hauteur du conteneur */
-  right: 0; /* Aligne le cœur sur le bord droit du conteneur */
-  transform: translateY(-50%); /* Centrage Vertical : Remonte le cœur de la moitié de sa propre hauteur le coeur */
+  opacity: 0;
+  font-size: 1.6rem;
   cursor: pointer;
+  position: absolute;
+  z-index: 2;
+  background: linear-gradient(0deg, #ab5edc 0%, #df6fda 58%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(0.6);
+  transition: opacity 0.2s linear, transform 0.2s linear;
+  transform: scale(0.6);
+}
+
+.restaurants__like--empty {
+  opacity: 1;
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: absolute;
+  transition: opacity 0.2s linear, transform 0.2s linear;
+  transform: scale(1);
+}
+
+/* l'effet survol en desktop */
+label.restaurants__like:hover .restaurants__like--full {
+  opacity: 1;
+  transform: scale(1);
+}
+label.restaurants__like:hover .restaurants__like--empty {
+  opacity: 0;
+  transform: scale(0.6);
 }
 
 .card {

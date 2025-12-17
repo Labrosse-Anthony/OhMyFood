@@ -22,6 +22,12 @@
     background-color: $background-color;
   }
 
+/* Animations */
+    @import '../animations/order-btn';
+    @import '../animations/heart-like';
+
+
+
 /* En Tete */  
 .header {
     display : flex;
@@ -42,36 +48,19 @@
     }
 }
 
-/* Image */
-.restaurant {
-    position : relative;
-
-    &__img {
+.restaurants__img {
         height : 275px;
         width :100%;
         display : block;
         object-fit: cover;
     }
 
-    &__like {
+
+/* Image */
+.restaurants {
     position : relative;
-  
-        &--empty {
-            width : 30px;
-            height : 80px;
-            position: absolute;
-            cursor: pointer;
-        }
 
-        &--full {
-            width : 30px;
-            height : 80px;
-            position: absolute;
-            cursor: pointer;
-        }
-    }
-
-    &__page {
+        &__page {
         background-color : $background-color;
         position : relative;
         z-index : 1;
@@ -85,7 +74,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding : 32px 41px 42px 17px;
+        padding : 32px 17px;
     }
   
     &__title {
@@ -94,12 +83,62 @@
         font-weight : 400;
     }
 
-    &__like {
-        position : relative;
-        background-color: $background-color;
-        border: none;
+    &__like { 
+        height: 2rem;
+        width: 2rem;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
     }
+    
+}
+
+/* Checkbox cachée */
+    input[type="checkbox"].checkbox__like {
+        display: none;
+    }
+
+/* État cliqué (checked) */
+    input[type="checkbox"].checkbox__like:checked + label.restaurants__like {
+      
+        .restaurants__like--full {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .restaurants__like--empty {
+            opacity: 0;
+            transform: scale(0.6);
+        }
+    }
+
+.restaurants__like--full {
+    @include restaurants__like--full;
+    transition: opacity 0.2s linear, transform 0.2s linear;
+    transform: scale(0.6);
+}
   
+.restaurants__like--empty {
+    @include restaurants__like--empty;
+    transition: opacity 0.2s linear, transform 0.2s linear;
+    transform: scale(1);
+}
+
+/* l'effet survol en desktop */
+label.restaurants__like:hover {
+  
+    .restaurants__like--full {
+    opacity: 1;
+    transform: scale(1);
+    }
+
+    .restaurants__like--empty {
+    opacity: 0;
+    transform: scale(0.6);
+    }
 }
 
 /* Menu */
@@ -202,9 +241,8 @@
     flex-direction :row;
     align-items: center;
     justify-content: center;
-    padding : 0 0 40px 0;
   
-    &__button {
+    &__btn {
         font-size: 16px;
         font-style: normal;
         font-weight: 500;
@@ -215,6 +253,7 @@
         border-radius: 25px;
         background: linear-gradient($pink, $primary);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
     }
 }
 

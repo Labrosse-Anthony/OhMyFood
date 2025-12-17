@@ -23,6 +23,12 @@ body {
     }
 }
 
+/* Animations */
+@import '../animations/explore-btn';
+@import '../animations/function-icons';
+@import '../animations/heart-like';
+
+
 /* En Tete */
 .header {
     position: relative; /* Positionnement relatif pour que d'autres éléments puissent s'y positionner */
@@ -90,6 +96,7 @@ body {
         padding: 16px 24px;
         border: none;
         border-radius: 25px;
+        text-decoration: none;
         background: linear-gradient($pink, $primary);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
         cursor: pointer;
@@ -121,6 +128,7 @@ body {
 
     &__steps {
         padding-left: 10px;
+        cursor: pointer;
     }
 
     &__number {
@@ -156,29 +164,60 @@ body {
         margin-top: 0;
     }
 
-    &__like {
-        position : relative; /* Conteneur du pictogram cœur. Pour ositionner les cœurs l'un sur l'autre. */
-        padding: 0 15px 0 0;
-  
-        &--empty {
-            height: 35px;
-            width: 30px;
-            position : absolute; /* Positionnement absolu par rapport au parent .restaurants__like */
-            top: 50%; /* Déplace le haut du cœur à 50% de la hauteur du conteneur */
-            right: 0; /* Aligne le cœur sur le bord droit du conteneur */
-            transform: translateY(-50%); /* Centrage Vertical : Remonte le cœur de la moitié de sa propre hauteur le coeur */
-            cursor: pointer;
+    &__like { 
+        height: 2rem;
+        width: 2rem;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+}
+
+/* Checkbox cachée */
+    input[type="checkbox"].checkbox__like {
+      display: none;
+    }
+    
+    /* État cliqué (checked) */
+    input[type="checkbox"].checkbox__like:checked + label.restaurants__like {
+      
+        .restaurants__like--full {
+            opacity: 1;
+            transform: scale(1);
         }
 
-        &--full {
-            height: 35px;
-            width: 30px;
-            position: absolute; /* Positionnement absolu par rapport au parent .restaurants__like */
-            top: 50%; /* Déplace le haut du cœur à 50% de la hauteur du conteneur */
-            right: 0; /* Aligne le cœur sur le bord droit du conteneur */
-            transform: translateY(-50%); /* Centrage Vertical : Remonte le cœur de la moitié de sa propre hauteur le coeur */
-            cursor: pointer;
+        .restaurants__like--empty {
+            opacity: 0;
+            transform: scale(0.6);
         }
+    }
+
+.restaurants__like--full {
+    @include restaurants__like--full;
+    transition: opacity 0.2s linear, transform 0.2s linear;
+    transform: scale(0.6);
+}
+  
+.restaurants__like--empty {
+    @include restaurants__like--empty;
+    transition: opacity 0.2s linear, transform 0.2s linear;
+    transform: scale(1);
+}
+
+/* l'effet survol en desktop */
+label.restaurants__like:hover {
+  
+    .restaurants__like--full {
+    opacity: 1;
+    transform: scale(1);
+    }
+
+    .restaurants__like--empty {
+    opacity: 0;
+    transform: scale(0.6);
     }
 }
 

@@ -26,17 +26,18 @@
                 </a>
                 <img class="header__logo" src="../assets/images/logo/ohmyfood@2x.svg" alt="Logo">
         </header>
-            <div class="restaurant">
-                <img class="restaurant__img" src="/assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="photo du plat, du restaurant la palette du gout">
+            <div class="restaurants">
+                <img class="restaurants__img" src="/assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="photo du plat, du restaurant la palette du gout">
             </div>
         <main>
-            <div class="restaurant__page">
-                <div class="restaurant__header">
-                    <h2 class="restaurant__title">La palette du goût</h2>
-                    <button type="submit" class="restaurant__like">
-                        <img src="../assets/Pictograms/heart-empty.svg" alt="coeur" class="restaurant__like--empty">
-                        <img src="../assets/Pictograms/heart-full.svg" alt="coeur pelin" class="restaurant__like--full">
-                    </button>
+            <div class="restaurants__page">
+                <div class="restaurants__header">
+                    <h2 class="restaurants__title">La palette du goût</h2>
+                    <input type="checkbox" id="fav-palette" class="checkbox__like">
+                    <label for="fav-palette" class="restaurants__like">
+                        <i class="far fa-heart restaurants__like--empty" alt="coeur"></i>
+                        <i class="fas fa-heart restaurants__like--full" alt="coeur pelin"></i>
+                    </label>
                 </div>
                 <div class="menu__card">
                     <div class="entrees">
@@ -143,15 +144,16 @@
                                     <p class="cards__price">23€</p>
                                 </div>
                             </div>
-                            <div class="cards__checkout">
-                            </div>
                         </div>
+                    </div>
+                    <div class="order">
+                        <button class="order__btn">Commander</button>
                     </div>
                 </div>
             </div>
         </main>            
         <footer class="footer">
-            <img class="footer__logo"  src="../assets/images/logo/ohmyfood@2x.svg">
+            <h2 class="footer__logo">ohmyfood</h2>
             <div class="footer__bloc">
                 <a href="#" class="footer__nav">
                     <i class="fas fa-utensils footer__nav--icons"></i>
