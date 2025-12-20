@@ -1,12 +1,14 @@
+@use'../variables/variables';
+
 .function {
     &__step:hover &__icon {
-        color: $primary;   
+        color: variables.$primary;   
         filter : brightness(1.10);
         transition: color 300ms ease-in-out;
         }
     
         &:active{
-            color: $primary;
+            color: variables.$primary;
             filter : brightness(0,90);
             transform: translateY(1px);
             transition: color 300ms ease-in-out;

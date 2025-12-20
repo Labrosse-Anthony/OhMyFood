@@ -1,107 +1,74 @@
 @charset "UTF-8";
+/* Animations */
 /***** Variables *****/
 /***** Couleurs *****/
-/* General */
-* {
-  margin: 0;
-  font-family: Roboto;
-}
-
-body {
-  background-color: #F6F6F6;
-}
-
 /* Animations */
-.loader__container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.3);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: fadeOut 2s forwards;
-  animation-delay: 2s;
+.cards__1 {
+  animation: card_reveal both ease-in-out;
+  animation-duration: 2s;
+  animation-delay: 100ms;
+}
+.cards__2 {
+  animation: card_reveal both ease-in-out;
+  animation-delay: 250ms;
+  animation-duration: 2s;
+}
+.cards__3 {
+  animation: card_reveal both ease-in-out;
+  animation-delay: 400ms;
+  animation-duration: 2s;
+}
+.cards__4 {
+  animation: card_reveal both ease-in-out;
+  animation-delay: 600ms;
+  animation-duration: 2s;
+}
+.cards__5 {
+  animation: card_reveal both ease-in-out;
+  animation-delay: 900ms;
+  animation-duration: 2s;
+}
+.cards__6 {
+  animation: card_reveal both ease-in-out;
+  animation-delay: 1000ms;
+  animation-duration: 2s;
+}
+.cards__7 {
+  animation: card_reveal both ease-in-out;
+  animation-delay: 1100ms;
+  animation-duration: 2s;
+}
+.cards__8 {
+  animation: card_reveal both ease-in-out;
+  animation-delay: 1300ms;
+  animation-duration: 2s;
+}
+.cards__9 {
+  animation: card_reveal both ease-in-out;
+  animation-delay: 1500ms;
+  animation-duration: 2s;
+}
+.cards__9 {
+  animation: card_reveal both ease-in-out;
+  animation-delay: 1700ms;
+  animation-duration: 2s;
+}
+.cards__10 {
+  animation: card_reveal both ease-in-out;
+  animation-delay: 1700ms;
+  animation-duration: 2s;
 }
 
-.loader__spinner {
-  position: relative;
-  border-radius: 50%;
-  height: 96px;
-  width: 96px;
-  animation: rotate_3922 1s linear infinite;
-  background-color: #9356DC;
-  background-image: linear-gradient(#9356DC, #FF79DA, #84cdfa, #5ad1cd);
-  z-index: 10001;
-  -webkit-mask-image: radial-gradient(circle, transparent 40%, black 41%);
-  mask-image: radial-gradient(circle, transparent 40%, black 41%);
-}
-
-.loader__spinner span {
-  position: absolute;
-  border-radius: 50%;
-  height: 100%;
-  width: 100%;
-  background-image: inherit;
-}
-
-.loader__spinner span:nth-of-type(1) {
-  filter: blur(5px);
-}
-
-.loader__spinner span:nth-of-type(2) {
-  filter: blur(10px);
-}
-
-.loader__spinner span:nth-of-type(3) {
-  filter: blur(25px);
-}
-
-.loader__spinner span:nth-of-type(4) {
-  filter: blur(50px);
-}
-
-.loader__spinner::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: transparent;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border-radius: 50%;
-}
-
-@keyframes fadeOut {
+@keyframes card_reveal {
   0% {
-    opacity: 1;
-    visibility: visible;
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+    opacity: 0%;
   }
   100% {
-    opacity: 0;
-    visibility: hidden;
-    -webkit-backdrop-filter: blur(0px);
-            backdrop-filter: blur(0px);
-    pointer-events: none;
+    opacity: 100%;
   }
 }
-@keyframes rotate_3922 {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* Animations */
+/* Animations */
 .order__btn {
   transition: all 600ms ease-in-out;
 }
@@ -113,6 +80,16 @@ body {
   filter: brightness(0, 95);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transform: translateY(1px);
+}
+
+/* General */
+* {
+  margin: 0;
+  font-family: Roboto;
+}
+
+body {
+  background-color: #F6F6F6;
 }
 
 /* En Tete */
@@ -197,7 +174,7 @@ input[type=checkbox].checkbox__like:checked + label.restaurants__like .restauran
   cursor: pointer;
   position: absolute;
   z-index: 2;
-  background: linear-gradient(0deg, #ab5edc 0%, #df6fda 58%);
+  background: linear-gradient(0deg, #9356DC 0%, #FF79DA 58%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transform: scale(0.6);

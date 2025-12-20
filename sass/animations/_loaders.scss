@@ -1,3 +1,5 @@
+@use'../variables/variables';
+
 .loader__container {
     position: fixed;
     top: 0;
@@ -10,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeOut 2s forwards;
+    animation: fadeOut 1s forwards;
     animation-delay: 2s;
 }
 
@@ -20,8 +22,8 @@
   height: 96px;
   width: 96px;
   animation: rotate_3922 1s linear infinite;
-  background-color: $primary;
-  background-image: linear-gradient($primary, $pink, #84cdfa , #5ad1cd);
+  background-color: variables.$primary;
+  background-image: linear-gradient(variables.$primary, variables.$pink, variables.$blue-light, variables.$blue-green);
   z-index: 10001;
   -webkit-mask-image: radial-gradient(circle, transparent 40% , black 41%);
   mask-image: radial-gradient(circle, transparent 40% , black 41%);

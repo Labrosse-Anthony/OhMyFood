@@ -1,5 +1,7 @@
+@use'../variables/variables';
+
 @mixin restaurants__like {
-    background: linear-gradient(0deg, #ab5edc 0%, #df6fda 58%);
+    background: linear-gradient(0deg, variables.$primary 0%, variables.$pink 58%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -17,7 +19,7 @@
     cursor: pointer;
     position: absolute;
     z-index: 2;
-    background: linear-gradient(0deg, #ab5edc 0%, #df6fda 58%);
+    background: linear-gradient(0deg, variables.$primary 0%, variables.$pink 58%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transform: scale(0.6);

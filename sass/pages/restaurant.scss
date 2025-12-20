@@ -1,17 +1,9 @@
-/***** Variables *****/
-  /***** Couleurs *****/
-  $light-gray : #EAEAEA;
-  $gray : #353535;
-  $background-color : #F6F6F6;
-  $white : #FFF;
-  $primary : #9356DC;
-  $pink : #FF79DA;
-  $black : #000;
-  $green : #99E2D0;
-  $green-font : #008766;
-  $mid-gray : #7E7E7E;
-  $backgournd-about : #F3F3F3;
-  
+/* Animations */
+    @use'../variables/variables';
+    @use '../animations/menu-reveal';
+    @use '../animations/heart-like';
+    @use '../animations/order-btn';
+    
 /* General */
  * {
     margin : 0;
@@ -19,14 +11,8 @@
   }
 
   body {
-    background-color: $background-color;
+    background-color: variables.$background-color;
   }
-
-/* Animations */
-    @import '../animations/loaders';
-    @import '../animations/order-btn';
-    @import '../animations/heart-like';
-
 
 /* En Tete */  
 .header {
@@ -43,7 +29,7 @@
     }
 
     &__return {
-        color: $black;
+        color: variables.$black;
         margin-left : 17px;
     }
 }
@@ -61,7 +47,7 @@
     position : relative;
 
         &__page {
-        background-color : $background-color;
+        background-color : variables.$background-color;
         position : relative;
         z-index : 1;
         border-top-right-radius: 30px;
@@ -116,13 +102,13 @@
     }
 
 .restaurants__like--full {
-    @include restaurants__like--full;
+    @include heart-like.restaurants__like--full;
     transition: opacity 0.2s linear, transform 0.2s linear;
     transform: scale(0.6);
 }
   
 .restaurants__like--empty {
-    @include restaurants__like--empty;
+    @include heart-like.restaurants__like--empty;
     transition: opacity 0.2s linear, transform 0.2s linear;
     transform: scale(1);
 }
@@ -187,7 +173,7 @@ label.restaurants__like:hover {
 }
 
 .cards {
-    background-color: $white;
+    background-color: variables.$white;
     display : flex;
     flex-direction: row;
     align-items: center;
@@ -246,12 +232,12 @@ label.restaurants__like:hover {
         font-size: 16px;
         font-style: normal;
         font-weight: 500;
-        color : $white;
+        color : variables.$white;
         text-align : center;
         padding : 15px 23px;
         border : none;
         border-radius: 25px;
-        background: linear-gradient($pink, $primary);
+        background: linear-gradient(variables.$pink, variables.$primary);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
         cursor: pointer;
     }
@@ -260,11 +246,11 @@ label.restaurants__like:hover {
 /* footer */
 .footer {
     padding: 22px 25px;
-    background-color: $gray;
-    color: $white;
+    background-color: variables.$gray;
+    color: variables.$white;
 
     & p , i , a {
-        color: $white;
+        color: variables.$white;
         text-decoration: none;
         margin: 0;
         margin-bottom: 7px;
@@ -274,7 +260,7 @@ label.restaurants__like:hover {
         font-family: Shrikhand;
         font-size: 28px;
         font-weight: 400;
-        color: $white;
+        color: variables.$white;
         margin: 0 0 24px 0;
     }
 
@@ -289,7 +275,7 @@ label.restaurants__like:hover {
         gap: 11px;
         
         &--icons {
-            color: $white;
+            color: variables.$white;
             display: flex;
             justify-content: center;
             align-items: center;

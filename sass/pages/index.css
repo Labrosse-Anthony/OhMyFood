@@ -1,16 +1,8 @@
 @charset "UTF-8";
+/* Animations et Variables */
 /***** Variables *****/
 /***** Couleurs *****/
-/* General */
-body {
-  margin: 0;
-  font-family: Roboto; /* Définit la police principale */
-}
-body ol {
-  padding: 0; /* Réinitialise le padding par défaut des listes ordonnées */
-}
-
-/* Animations */
+/* Animations et Variables */
 .loader__container {
   position: fixed;
   top: 0;
@@ -24,7 +16,7 @@ body ol {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeOut 2s forwards;
+  animation: fadeOut 1s forwards;
   animation-delay: 2s;
 }
 
@@ -101,6 +93,7 @@ body ol {
     transform: rotate(360deg);
   }
 }
+/* Animations et Variables */
 .about__btn {
   transition: all 600ms ease-in-out;
 }
@@ -114,6 +107,7 @@ body ol {
   transform: translateY(1px);
 }
 
+/* Animations et Variables */
 .function__step:hover .function__icon {
   color: #9356DC;
   filter: brightness(1.1);
@@ -124,6 +118,16 @@ body ol {
   filter: brightness(0, 90);
   transform: translateY(1px);
   transition: color 300ms ease-in-out;
+}
+
+/* Animations et Variables */
+/* General */
+body {
+  margin: 0;
+  font-family: Roboto; /* Définit la police principale */
+}
+body ol {
+  padding: 0; /* Réinitialise le padding par défaut des listes ordonnées */
 }
 
 /* En Tete */
@@ -280,7 +284,7 @@ input[type=checkbox].checkbox__like:checked + label.restaurants__like .restauran
   cursor: pointer;
   position: absolute;
   z-index: 2;
-  background: linear-gradient(0deg, #ab5edc 0%, #df6fda 58%);
+  background: linear-gradient(0deg, #9356DC 0%, #FF79DA 58%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transform: scale(0.6);
