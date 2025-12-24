@@ -1,0 +1,78 @@
+@use'../variables/variables';
+
+.cards {
+  &__1 {
+      animation : card_reveal both ease-in-out ;
+      animation-duration : 2s;
+      animation-delay : 100ms;
+  }
+    
+  &__2 {
+    animation : card_reveal both ease-in-out;
+    animation-delay : 250ms;
+    animation-duration : 2s;
+  }
+    
+  &__3 {
+    animation : card_reveal both ease-in-out;
+    animation-delay : 400ms;
+    animation-duration : 2s;
+  }
+
+  &__4{
+    animation : card_reveal both ease-in-out;
+    animation-delay : 600ms;
+    animation-duration : 2s;
+  }
+
+  &__5 {
+      animation : card_reveal both ease-in-out;
+      animation-delay : 900ms;
+      animation-duration : 2s;
+  }
+
+  &__6 {
+    animation : card_reveal both ease-in-out;
+    animation-delay : 1000ms;
+    animation-duration : 2s;
+  }
+
+  &__7 {
+    animation : card_reveal both ease-in-out;
+    animation-delay : 1100ms;
+    animation-duration : 2s;
+  }
+
+  &__8 {
+    animation : card_reveal both ease-in-out;
+    animation-delay : 1300ms;
+    animation-duration : 2s;    
+  }
+    
+  &__9 {
+    animation : card_reveal both ease-in-out;
+    animation-delay : 1500ms;
+    animation-duration : 2s;
+  }
+    
+  &__9 {
+    animation : card_reveal both ease-in-out;
+    animation-delay : 1700ms;
+    animation-duration : 2s;
+  }
+
+    &__10 {
+    animation : card_reveal both ease-in-out;
+    animation-delay : 1700ms;
+    animation-duration : 2s;
+  }
+}
+
+@keyframes card_reveal {
+  0% {
+    opacity : 0%;
+  }
+  100% {
+    opacity : 100%;
+  }
+}
