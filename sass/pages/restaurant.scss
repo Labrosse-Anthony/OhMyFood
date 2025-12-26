@@ -3,11 +3,12 @@
     @use '../animations/menu-reveal';
     @use '../animations/heart-like';
     @use '../animations/order-btn';
+    @use'../animations/cards-checked';
     
 /* General */
  * {
     margin : 0;
-    font-family : Roboto;
+    font-family : Roboto; 
   }
 
   body {

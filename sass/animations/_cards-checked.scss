@@ -1,0 +1,74 @@
+@use'../variables/variables';
+
+.cards {
+  position : relative;
+  display: flex;
+  overflow: hidden;
+  cursor: pointer;
+  transition : transform 300ms ease;
+
+  &:active .cards__checkout {
+    opacity : 1;
+    width: 60px;
+    transition: all 600ms ease;
+  }
+
+  &:active .cards__info {
+    margin-right: 30px;
+    animation : card-checked 600ms both;
+  }
+
+  &:active .fa__check {
+    animation: rotate-check 600ms ease;
+  }
+}
+
+.cards__checkout {
+  display : flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position : absolute;
+  right : 0px;
+  height : 60px;
+  background-color : #99E2D0;
+  border-top-right-radius : 15px;
+  border-bottom-right-radius : 15px;
+  opacity : 0;
+}
+
+.fa__check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: variables.$white;
+  color: #99E2D0;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+}
+
+.cards__info {
+    animation : card-no-checked 600ms both;
+  }
+
+.card__content__price {
+  right : 20px;
+  bottom : 20px;
+}
+
+@keyframes rotate-check {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+@keyframes card-checked {
+  0% {width : 100%}
+  100% {width: 75%;}
+}
+
+@keyframes card-no-checked {
+  0% {width: 75%;}
+  100% {width : 100%}
+}
