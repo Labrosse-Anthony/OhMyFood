@@ -7,18 +7,19 @@
   cursor: pointer;
   transition : transform 300ms ease;
 
-  &:active .cards__checkout {
+  &:hover .cards__checkout {
     opacity : 1;
     width: 60px;
     transition: all 600ms ease;
+    animation: card-check 600ms both;
   }
 
-  &:active .cards__info {
+  &:hover .cards__info {
     margin-right: 30px;
     animation : card-checked 600ms both;
   }
 
-  &:active .fa__check {
+  &:hover .fa__check {
     animation: rotate-check 600ms ease;
   }
 }
@@ -38,22 +39,28 @@
 }
 
 .fa__check {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
+  align-content: center;
   background-color: variables.$white;
   color: #99E2D0;
+  height: 26px;
+  width: 26px;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  font-size: 12px;
+  font-size: 16px;
+  opacity: 1;
+
+  & > i {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .cards__info {
     animation : card-no-checked 600ms both;
   }
 
-.card__content__price {
+.cards__price {
+  padding-right: 10px;
   right : 20px;
   bottom : 20px;
 }
@@ -71,4 +78,9 @@
 @keyframes card-no-checked {
   0% {width: 75%;}
   100% {width : 100%}
+}
+
+@keyframes card-check {
+  0% {width: 0;}
+  100% {width: 15%;}
 }

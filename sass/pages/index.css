@@ -411,6 +411,47 @@ input[type=checkbox].checkbox__like:checked + label.restaurants__like .restauran
 /* Le code ci-dessous correspond à la version responsive uniquement */
 /****** Media queries ***********/
 /* Medium devices (tablets , 768px and up) */
+@media (min-width: 768px) {
+  .about {
+    padding: 30px 20px;
+  }
+  .about__title {
+    font-size: 28px;
+  }
+  .about__btn {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+    display: block;
+  }
+  .function__container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  .function__steps {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 0;
+  }
+  .function__step {
+    flex: 1;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+    row-gap: 30px;
+  }
+  .card {
+    width: 100%;
+    height: auto;
+  }
+}
 /* Desktop devices (desktop , 1024px and up) */
 @media (min-width: 1024px) {
   .header {
@@ -483,14 +524,12 @@ input[type=checkbox].checkbox__like:checked + label.restaurants__like .restauran
     transform: scale(0.6);
   }
   .cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     -moz-column-gap: 50px;
          column-gap: 50px;
     row-gap: 50px;
     margin-bottom: 0;
   }
-  .card__link .card {
+  .card {
     width: 100%;
     height: auto;
   }
@@ -536,15 +575,12 @@ input[type=checkbox].checkbox__like:checked + label.restaurants__like .restauran
 /* Extra large devices (large desktop , 1440px and up) */
 @media (min-width: 1440px) {
   .function {
-    padding: 30px 180px;
+    padding: 30px 20px;
   }
   .restaurants {
-    padding: 60px 180px;
+    padding: 60px 20px;
   }
-  .restaurant__cards--direction {
+  .cards {
     margin-bottom: 50px;
-  }
-  .restaurant__cards--direction__link {
-    width: 45%;
   }
 }/*# sourceMappingURL=index.css.map */
