@@ -177,7 +177,6 @@ label.restaurants__like:hover {
     background-color: variables.$white;
     display : flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
     border-radius : 15px;
@@ -186,8 +185,12 @@ label.restaurants__like:hover {
     cursor: pointer;
   
     &__info {
-        padding : 12px 15px 0 15px;
-        width: 100%;
+        padding : 12px 15px 12px 15px;
+        flex: 1;
+        min-width: 0;
+        white-space: 0;
+        white-space: nowrap;
+        overflow: hidden;
     }
   
     &__title {
@@ -286,3 +289,128 @@ label.restaurants__like:hover {
         }
     }
 }
+
+/* Le code ci-dessous correspond à la version responsive uniquement */
+
+/****** Media queries ***********/
+/* Medium devices (tablets , 768px and up) */
+@media (min-width : 768px) {
+    .restaurants__page {
+      max-width: 768px;
+      margin: -40px auto 0;
+      width: 100%;
+    }
+
+    .menu__card {
+        padding: 0 40px;
+    }
+
+    .footer {
+        padding: 40px 25px;
+    }
+}
+
+/* Desktop devices (desktop , 1024px and up) */
+@media (min-width : 1024px) {
+  .restaurants {
+    
+    &__page {
+        background-color: variables.$light-gray;
+        position: relative;
+        width: 80%;
+        max-width: 1055px;
+        margin: -64px auto 0 auto;
+        z-index: 2;
+        border-top-right-radius: 40px;
+        border-top-right-radius: 40px;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding: 40px 0px;
+    }
+
+    &__img {
+        height: 400px;
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+    }
+  }
+
+  .menu__card {
+    padding: 0 15%;
+  }
+
+  .order {
+    padding: 40px 0;
+  }
+
+  .footer {
+    display : flex;
+    flex-direction : row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 64px 25px 30px;
+
+    &__logo {
+        width: auto;
+        font-size: 18px;
+        font-weight: 400;
+        margin: 0;
+        margin-left: 70px;
+    }
+
+    &__bloc {
+        flex-direction : row;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 15px;
+        margin: 0;
+
+    & p, & i, & a {
+      margin-bottom: 0;
+    }
+
+      &__nav {
+        margin: 0;
+
+        &__info{
+            margin-left: 20px;
+            }
+
+        & p {
+            margin-bottom: 0;
+        }
+ 
+      &__nav--icon {
+        margin-right : 5px;
+      }
+
+      & p {
+        margin-bottom: 0;
+      }
+     }
+    }
+  }
+}
+/* Extra large devices (large desktop , 1440px and up) */
+@media (min-width : 1440px) {
+    .restaurants {
+    
+    &__header {
+      padding-bottom : 40px;
+    }
+  }
+
+  .order__btn {
+    width : 186px;
+    height: 50px;
+  }
+}
+
+

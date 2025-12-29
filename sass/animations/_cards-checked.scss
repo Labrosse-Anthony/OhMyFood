@@ -5,17 +5,14 @@
   display: flex;
   overflow: hidden;
   cursor: pointer;
-  transition : transform 300ms ease;
 
   &:hover .cards__checkout {
     opacity : 1;
-    width: 60px;
     transition: all 600ms ease;
     animation: card-check 600ms both;
   }
 
   &:hover .cards__info {
-    margin-right: 30px;
     animation : card-checked 600ms both;
   }
 
@@ -26,23 +23,22 @@
 
 .cards__checkout {
   display : flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  position : absolute;
-  right : 0px;
-  height : 60px;
-  background-color : #99E2D0;
+  overflow: hidden;
+  opacity : 0;
+  width: 0;
+  background-color : variables.$green;
   border-top-right-radius : 15px;
   border-bottom-right-radius : 15px;
-  opacity : 0;
 }
 
 .fa__check {
+  background-color: variables.$white;
+  color: variables.$green;
+  display: flex;
   text-align: center;
   align-content: center;
-  background-color: variables.$white;
-  color: #99E2D0;
   height: 26px;
   width: 26px;
   border-radius: 50%;
@@ -82,5 +78,5 @@
 
 @keyframes card-check {
   0% {width: 0;}
-  100% {width: 15%;}
+  100% {width: 60px;}
 }

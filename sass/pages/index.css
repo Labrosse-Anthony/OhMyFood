@@ -207,20 +207,25 @@ body ol {
   background-color: #FFF;
   padding: 38px 20px 28px 20px;
 }
+.function__container {
+  max-width: 470px;
+  margin: 0 auto;
+}
 .function__title {
   font-size: 24px;
 }
 .function__step {
+  background-color: #EAEAEA;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 25px;
   position: relative;
   height: 74px;
   width: 100%;
   border-radius: 25px;
-  background-color: #EAEAEA;
-  padding-left: 50px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding-left: 0;
 }
 .function__steps {
   padding-left: 10px;
@@ -237,15 +242,16 @@ body ol {
   font-weight: 500;
   width: 24px;
   height: 24px;
-  border-radius: 25px;
-  left: -10px;
+  border-radius: 50%;
+  left: -12px;
 }
 .function__icon {
   color: #7E7E7E;
-  height: 20px;
-  width: 13px;
-  padding-right: 20px;
-  padding-left: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  margin-right: 20px;
 }
 
 /*Restaurants*/
@@ -425,20 +431,27 @@ input[type=checkbox].checkbox__like:checked + label.restaurants__like .restauran
     display: block;
   }
   .function__container {
-    max-width: 100%;
-    padding: 0 20px;
+    max-width: 900px;
+    margin: 0 auto;
   }
   .function__steps {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 15px;
+    gap: 20px;
     padding: 0;
   }
   .function__step {
     flex: 1;
-    margin-bottom: 0;
-    padding-left: 0;
+    justify-content: center;
+    padding-left: 0 15px 0 25px;
+    font-size: 14px;
+  }
+  .function__number {
+    left: -12px;
+  }
+  .function__icon {
+    margin-right: 15px;
   }
   .cards {
     display: grid;
