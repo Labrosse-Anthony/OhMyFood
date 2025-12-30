@@ -1,344 +1,334 @@
 /* Animations */
-    @use'../variables/variables';
-    @use '../animations/menu-reveal';
-    @use '../animations/heart-like';
-    @use '../animations/order-btn';
-    @use'../animations/cards-checked';
-    
+@use '../variables/variables';
+@use '../animations/menu-reveal';
+@use '../animations/heart-like';
+@use '../animations/order-btn';
+@use '../animations/cards-checked';
+
 /* General */
- * {
-    margin : 0;
-    font-family : Roboto; 
-  }
+* {
+  margin: 0;
+  font-family: Roboto;
+}
 
-  body {
-    background-color: variables.$background-color;
-  }
+body {
+  background-color: variables.$background-color;
+}
 
-/* En Tete */  
+/* En Tete */
 .header {
-    display : flex;
-    flex-direction : row;
-    align-items: center;
-    justify-content: center;
-    padding : 14px 0;
-    box-shadow : 0px 2px 4px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 0;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
 
-    &__logo {
-        height: 36px;
-        width: 100%;
-    }
+  &__logo {
+    height: 36px;
+    width: 100%;
+  }
 
-    &__return {
-        color: variables.$black;
-        margin-left : 17px;
-    }
+  &__return {
+    color: variables.$black;
+    margin-left: 17px;
+  }
 }
 
 .restaurants__img {
-        height : 275px;
-        width :100%;
-        display : block;
-        object-fit: cover;
-    }
+  height: 275px;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
 
 
 /* Image */
 .restaurants {
-    position : relative;
+  position: relative;
 
-        &__page {
-        background-color : variables.$background-color;
-        position : relative;
-        z-index : 1;
-        border-top-right-radius: 30px;
-        border-top-left-radius : 30px;
-        margin-top : -40px;   
-    }
-  
-    &__header {
-        display : flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding : 32px 17px;
-    }
-  
-    &__title {
-        font-family : Shrikhand;
-        font-size : 28px;
-        font-weight : 400;
-    }
+  &__page {
+    background-color: variables.$background-color;
+    position: relative;
+    z-index: 1;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    margin-top: -40px;
+  }
 
-    &__like { 
-        height: 2rem;
-        width: 2rem;
-        padding: 0;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-    }
-    
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 17px;
+  }
+
+  &__title {
+    font-family: Shrikhand;
+    font-size: 28px;
+    font-weight: 400;
+  }
+
+  &__like {
+    height: 2rem;
+    width: 2rem;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
 }
 
 /* Checkbox cachée */
-    input[type="checkbox"].checkbox__like {
-        display: none;
-    }
+input[type="checkbox"].checkbox__like {
+  display: none;
+}
 
 /* État cliqué (checked) */
-    input[type="checkbox"].checkbox__like:checked + label.restaurants__like {
-      
-        .restaurants__like--full {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .restaurants__like--empty {
-            opacity: 0;
-            transform: scale(0.6);
-        }
-    }
-
-.restaurants__like--full {
-    @include heart-like.restaurants__like--full;
-    transition: opacity 0.2s linear, transform 0.2s linear;
-    transform: scale(0.6);
-}
-  
-.restaurants__like--empty {
-    @include heart-like.restaurants__like--empty;
-    transition: opacity 0.2s linear, transform 0.2s linear;
-    transform: scale(1);
-}
-
-/* l'effet survol en desktop */
-label.restaurants__like:hover {
-  
-    .restaurants__like--full {
+input[type="checkbox"].checkbox__like:checked + label.restaurants__like {
+  .restaurants__like--full {
     opacity: 1;
     transform: scale(1);
-    }
+  }
 
-    .restaurants__like--empty {
+  .restaurants__like--empty {
     opacity: 0;
     transform: scale(0.6);
-    }
+  }
+}
+
+.restaurants__like--full {
+  @include heart-like.restaurants__like--full;
+  transition: opacity 0.2s linear, transform 0.2s linear;
+  transform: scale(0.6);
+}
+
+.restaurants__like--empty {
+  @include heart-like.restaurants__like--empty;
+  transition: opacity 0.2s linear, transform 0.2s linear;
+  transform: scale(1);
 }
 
 /* Menu */
 .menu__card {
-  display : flex;
-  flex-direction : column;
-  padding : 0 13px 40px 13px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 13px 40px 13px;
 }
 
 .entrees {
-    padding-bottom: 40px;
+  padding-bottom: 40px;
 
   &__title {
-    font-size : 14px;
-    font-weight : 300;
-    padding-bottom : 8px;
+    font-size: 14px;
+    font-weight: 300;
+    padding-bottom: 8px;
     margin-bottom: 15px;
     width: 30px;
-    border-bottom : 3px solid #99E2D0;
+    border-bottom: 3px solid #99E2D0;
   }
 }
 
 .plats {
-    padding-bottom: 40px;
+  padding-bottom: 40px;
 
-    &__title {
-        font-size : 14px;
-        font-weight : 300;
-        padding-bottom :8px;
-        margin-bottom: 15px;
-        width: 30px;
-        border-bottom : 3px solid #99E2D0;
-    }
+  &__title {
+    font-size: 14px;
+    font-weight: 300;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    width: 30px;
+    border-bottom: 3px solid #99E2D0;
+  }
 }
 
 .desserts {
-    padding-bottom: 40px;
+  padding-bottom: 40px;
 
-    &__title {
-        font-size : 14px;
-        font-weight : 300;
-        padding-bottom :8px;
-        width: 30px;
-        border-bottom : 3px solid #99E2D0;
-    }
+  &__title {
+    font-size: 14px;
+    font-weight: 300;
+    padding-bottom: 8px;
+    width: 30px;
+    border-bottom: 3px solid #99E2D0;
+  }
 }
 
 .cards {
-    background-color: variables.$white;
-    display : flex;
-    flex-direction: row;
-    justify-content: space-between;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
-    border-radius : 15px;
-    margin-top : 12px;
-    height : 60px;
-    cursor: pointer;
-  
-    &__info {
-        padding : 12px 15px 12px 15px;
-        flex: 1;
-        min-width: 0;
-        white-space: 0;
-        white-space: nowrap;
-        overflow: hidden;
-    }
-  
-    &__title {
-        text-overflow: ellipsis;
-        white-space : nowrap;
-        overflow : hidden;
-        font-size : 14px;
-        font-weight : 700;
-    }
-  
-    &__description {
-        display : flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding : 5px 0px 12px 0px;
-    }
-    
-    &__text {
-         text-overflow: ellipsis;
-        white-space : nowrap;
-        overflow : hidden;
-        font-size : 12px;
-        font-weight: 300;
-        width: 80%;
-    }
-  
-    &__price {
-        font-weight: 700;
-        font-size : 14px;
-    }
+  background-color: variables.$white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+  border-radius: 15px;
+  margin-top: 12px;
+  height: 60px;
+  cursor: pointer;
+
+  &__info {
+    padding: 12px 15px 12px 15px;
+    flex: 1;
+    min-width: 0;
+    white-space: 0;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
-  
-/* Bouton commande */
-.order{
-    display : flex;
-    flex-direction :row;
+  &__title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-  
-    &__btn {
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-        color : variables.$white;
-        text-align : center;
-        padding : 15px 23px;
-        border : none;
-        border-radius: 25px;
-        background: linear-gradient(variables.$pink, variables.$primary);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-        cursor: pointer;
-    }
+    justify-content: space-between;
+    padding: 5px 0px 12px 0px;
+  }
+
+  &__text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 12px;
+    font-weight: 300;
+    width: 80%;
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 14px;
+  }
+}
+
+
+/* Bouton commande */
+.order {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  &__btn {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    color: variables.$white;
+    text-align: center;
+    padding: 15px 23px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(variables.$pink, variables.$primary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+  }
 }
 
 /* footer */
 .footer {
-    padding: 22px 25px;
-    background-color: variables.$gray;
+  padding: 22px 25px;
+  background-color: variables.$gray;
+  color: variables.$white;
+
+  & p,
+  i,
+  a {
     color: variables.$white;
+    text-decoration: none;
+    margin: 0;
+    margin-bottom: 7px;
+  }
 
-    & p , i , a {
-        color: variables.$white;
-        text-decoration: none;
-        margin: 0;
-        margin-bottom: 7px;
-    }
+  &__logo {
+    font-family: Shrikhand;
+    font-size: 28px;
+    font-weight: 400;
+    color: variables.$white;
+    margin: 0 0 24px 0;
+  }
 
-    &__logo {
-        font-family: Shrikhand;
-        font-size: 28px;
-        font-weight: 400;
-        color: variables.$white;
-        margin: 0 0 24px 0;
-    }
+  &__bloc {
+    display: flex;
+    flex-direction: column;
+  }
 
-    &__bloc {
-        display: flex;
-        flex-direction: column;
-    }
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 11px;
 
-    &__nav {
-        display: flex;
-        align-items: center;
-        gap: 11px;
-        
-        &--icons {
-            color: variables.$white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 15px;
-            height: 15px;
-            font-size: 15px;
-        }
+    &--icons {
+      color: variables.$white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 15px;
+      height: 15px;
+      font-size: 15px;
     }
+  }
 }
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
 /****** Media queries ***********/
+
 /* Medium devices (tablets , 768px and up) */
-@media (min-width : 768px) {
-    .restaurants__page {
-      max-width: 768px;
-      margin: -40px auto 0;
-      width: 100%;
-    }
+@media (min-width: 768px) {
+  body {
+    background-color: variables.$white;
+  }
 
-    .menu__card {
-        padding: 0 40px;
-    }
+  .restaurants__page {
+    max-width: 768px;
+    margin: -40px auto 0;
+    width: 100%;
+  }
 
-    .footer {
-        padding: 40px 25px;
-    }
+  .menu__card {
+    padding: 0 40px;
+  }
+
+  .footer {
+    padding: 40px 25px;
+  }
 }
 
 /* Desktop devices (desktop , 1024px and up) */
-@media (min-width : 1024px) {
+@media (min-width: 1024px) {
   .restaurants {
-    
     &__page {
-        background-color: variables.$light-gray;
-        position: relative;
-        width: 80%;
-        max-width: 1055px;
-        margin: -64px auto 0 auto;
-        z-index: 2;
-        border-top-right-radius: 40px;
-        border-top-right-radius: 40px;
+      background-color: variables.$light-gray;
+      position: relative;
+      width: 80%;
+      max-width: 1055px;
+      margin: -64px auto 0 auto;
+      z-index: 2;
+      border-top-right-radius: 40px;
+      border-top-right-radius: 40px;
     }
 
     &__header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        padding: 40px 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      padding: 40px 0px;
     }
 
     &__img {
-        height: 400px;
-        width: 100%;
-        display: block;
-        object-fit: cover;
-        object-position: center;
+      height: 400px;
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
     }
   }
 
@@ -350,67 +340,79 @@ label.restaurants__like:hover {
     padding: 40px 0;
   }
 
+  /* l'effet survol en desktop */
+  label.restaurants__like:hover {
+    .restaurants__like--full {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .restaurants__like--empty {
+      opacity: 0;
+      transform: scale(0.6);
+    }
+  }
+
   .footer {
-    display : flex;
-    flex-direction : row-reverse;
+    display: flex;
+    flex-direction: row-reverse;
     justify-content: flex-start;
     align-items: center;
     padding: 64px 25px 30px;
 
     &__logo {
-        width: auto;
-        font-size: 18px;
-        font-weight: 400;
-        margin: 0;
-        margin-left: 70px;
+      width: auto;
+      font-size: 18px;
+      font-weight: 400;
+      margin: 0;
+      margin-left: 70px;
     }
 
     &__bloc {
-        flex-direction : row;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 15px;
-        margin: 0;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 15px;
+      margin: 0;
 
-    & p, & i, & a {
-      margin-bottom: 0;
-    }
+      & p,
+      & i,
+      & a {
+        margin-bottom: 0;
+      }
 
       &__nav {
         margin: 0;
 
-        &__info{
-            margin-left: 20px;
-            }
+        &__info {
+          margin-left: 20px;
+        }
 
         & p {
-            margin-bottom: 0;
+          margin-bottom: 0;
         }
- 
-      &__nav--icon {
-        margin-right : 5px;
-      }
 
-      & p {
-        margin-bottom: 0;
+        &__nav--icon {
+          margin-right: 5px;
+        }
       }
-     }
     }
   }
 }
+
 /* Extra large devices (large desktop , 1440px and up) */
-@media (min-width : 1440px) {
-    .restaurants {
-    
+@media (min-width: 1440px) {
+  .restaurants {
     &__header {
-      padding-bottom : 40px;
+      padding-bottom: 40px;
     }
   }
 
   .order__btn {
-    width : 186px;
+    width: 186px;
     height: 50px;
   }
 }
+
 
 

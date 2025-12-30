@@ -1,28 +1,28 @@
-@use'../variables/variables';
+@use '../variables/variables';
 
 @mixin restaurants__like {
-    background: linear-gradient(0deg, variables.$primary 0%, variables.$pink 58%);
-    -webkit-background-clip: text; /* découpe l'arrière-plan (le dégradé) pour qu'il prenne la forme du texte (logo ) */
-    -webkit-text-fill-color: transparent; /* Rend la couleur de l'icône transparente pour laisser voir le dégradé qui est derrière. */
+  background: linear-gradient(0deg, variables.$primary 0%, variables.$pink 58%);
+  -webkit-background-clip: text; /* découpe l'arrière-plan (le dégradé) pour qu'il prenne la forme du texte (logo) */
+  -webkit-text-fill-color: transparent; /* Rend la couleur de l'icône transparente pour laisser voir le dégradé qui est derrière. */
 }
 
 @mixin restaurants__like--empty {
-    opacity: 1; /* L'élément est totalement visible (opacité à 100%). */
-    font-size: 26px;
-    cursor: pointer;  
-    position: absolute; /* Position absolue pour pouvoir superposer le cœur plein exactement au-dessus du cœur vide. */
+  opacity: 1; /* L'élément est totalement visible (opacité à 100%). */
+  font-size: 26px;
+  cursor: pointer;
+  position: absolute; /* Position absolue pour pouvoir superposer le cœur plein exactement au-dessus du cœur vide. */
 }
 
 @mixin restaurants__like--full {
-    opacity: 0;
-    font-size: 26px;
-    cursor: pointer; 
-    position: absolute; /* Position absolue pour se placer au-dessus du cœur vide (qui est aussi en absolute). */
-    z-index: 2; /* Place cet élément au-dessus de l'autre (couche supérieure) grâce à un index plus élevé. */
-    background: linear-gradient(0deg, variables.$primary 0%, variables.$pink 58%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transform: scale(0.6); /* Réduit l'élément à 60% de sa taille initiale (souvent utilisé pour créer un effet de "zoom" lors de l'animation). */
+  opacity: 0;
+  font-size: 26px;
+  cursor: pointer;
+  position: absolute; /* Position absolue pour se placer au-dessus du cœur vide (qui est aussi en absolute). */
+  z-index: 2; /* Place cet élément au-dessus de l'autre (couche supérieure) grâce à un index plus élevé. */
+  background: linear-gradient(0deg, variables.$primary 0%, variables.$pink 58%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(0.6); /* Réduit l'élément à 60% de sa taille initiale (souvent utilisé pour créer un effet de "zoom" lors de l'animation). */
 }
 
 

@@ -115,7 +115,7 @@
 }
 .function:active {
   color: #9356DC;
-  filter: brightness(0, 90);
+  filter: brightness(0.9); /* Note : Utilisation d'un point (.) et non d'une virgule pour les décimales CSS */
   transform: translateY(1px); /* Déplace physiquement le bouton de 1 pixel vers le bas pour un effet d'enfoncement réaliste */
   transition: color 300ms ease-in-out;
 }
@@ -390,7 +390,9 @@ input[type=checkbox].checkbox__like:checked + label.restaurants__like .restauran
   background-color: #353535;
   color: #FFF;
 }
-.footer p, .footer i, .footer a {
+.footer p,
+.footer i,
+.footer a {
   color: #FFF;
   text-decoration: none;
   margin: 0;

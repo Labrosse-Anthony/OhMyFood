@@ -1,19 +1,19 @@
-@use'../variables/variables';
+@use '../variables/variables';
 
 .loader__container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: fadeOut 1s forwards;
-    animation-delay: 2s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeOut 1s forwards;
+  animation-delay: 2s;
 }
 
 .loader__spinner {
@@ -25,8 +25,8 @@
   background-color: variables.$primary;
   background-image: linear-gradient(variables.$primary, variables.$pink, variables.$blue-light, variables.$blue-green);
   z-index: 10001;
-  -webkit-mask-image: radial-gradient(circle, transparent 40% , black 41%);
-  mask-image: radial-gradient(circle, transparent 40% , black 41%);
+  -webkit-mask-image: radial-gradient(circle, transparent 40%, black 41%);
+  mask-image: radial-gradient(circle, transparent 40%, black 41%);
 }
 
 .loader__spinner span {
@@ -67,18 +67,18 @@
 }
 
 @keyframes fadeOut {
-    0% {
-        opacity: 1;
-        visibility: visible;
-        backdrop-filter: blur(10px);
-    }
+  0% {
+    opacity: 1;
+    visibility: visible;
+    backdrop-filter: blur(10px);
+  }
 
-    100% {
-        opacity: 0;
-        visibility: hidden;
-        backdrop-filter: blur(0px);
-        pointer-events: none;
-    }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    backdrop-filter: blur(0px);
+    pointer-events: none;
+  }
 }
 
 @keyframes rotate_3922 {

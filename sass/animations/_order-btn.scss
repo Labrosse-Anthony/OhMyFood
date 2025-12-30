@@ -1,18 +1,18 @@
-@use'../variables/variables';
+@use '../variables/variables';
 
 .order {
-    &__btn {
-        transition : all 600ms ease-in-out; /* L'animation commence lentement, accélère, puis ralentit à la fin. */
-    
-        &:hover{
-            filter : brightness(1.10); /* Augmente la luminosité de l'élément de 110% */
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-        }
-    
-        &:active{
-            filter : brightness(0.95); /* assombrit légèrement le bouton (95% de luminosité) */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            transform: translateY(1px); /* Déplace physiquement le bouton de 1 pixel vers le bas pour un effet d'enfoncement réaliste */
-        }
-    }    
+  &__btn {
+    transition: all 600ms ease-in-out; /* L'animation commence lentement, accélère, puis ralentit à la fin. */
+
+    &:hover {
+      filter: brightness(1.10); /* Augmente la luminosité de l'élément de 110% */
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    &:active {
+      filter: brightness(0.95); /* assombrit légèrement le bouton (95% de luminosité) */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transform: translateY(1px); /* Déplace physiquement le bouton de 1 pixel vers le bas pour un effet d'enfoncement réaliste */
+    }
+  }
 }

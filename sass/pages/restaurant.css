@@ -58,10 +58,10 @@
 
 @keyframes card_reveal {
   0% {
-    opacity: 0%; /* L'élément est invisible */
+    opacity: 0; /* L'élément est invisible */
   }
   100% {
-    opacity: 100%; /* L'élément est visible */
+    opacity: 1; /* L'élément est visible */
   }
 }
 /* Animations */
@@ -104,7 +104,7 @@
   justify-content: center; /* Centre horizontalement */
   overflow: hidden; /* Cache le contenu si la largeur est trop petite */
   opacity: 0;
-  width: 0; /*  Largeur nulle par défaut (caché) */
+  width: 0; /* Largeur nulle par défaut (caché) */
   background-color: #99E2D0;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -137,7 +137,8 @@
   bottom: 20px;
 }
 
-@keyframes rotate-check { /* Animation de rotation pour l'icône check */
+@keyframes rotate-check {
+  /* Animation de rotation pour l'icône check */
   0% {
     transform: rotate(0deg);
   }
@@ -145,7 +146,8 @@
     transform: rotate(360deg);
   }
 }
-@keyframes card-checked { /* Animation du texte quand on survole (rétrécissement) */
+@keyframes card-checked {
+  /* Animation du texte quand on survole (rétrécissement) */
   0% {
     width: 100%;
   }
@@ -153,7 +155,8 @@
     width: 75%;
   }
 }
-@keyframes card-no-checked { /* Animation du texte quand on ne survole plus (retour à la normale) */
+@keyframes card-no-checked {
+  /* Animation du texte quand on ne survole plus (retour à la normale) */
   0% {
     width: 75%;
   }
@@ -161,7 +164,8 @@
     width: 100%;
   }
 }
-@keyframes card-check { /* Animation de la boîte verte (coulissement) */
+@keyframes card-check {
+  /* Animation de la boîte verte (coulissement) */
   0% {
     width: 0;
   }
@@ -276,16 +280,6 @@ input[type=checkbox].checkbox__like:checked + label.restaurants__like .restauran
   position: absolute; /* Position absolue pour pouvoir superposer le cœur plein exactement au-dessus du cœur vide. */
   transition: opacity 0.2s linear, transform 0.2s linear;
   transform: scale(1);
-}
-
-/* l'effet survol en desktop */
-label.restaurants__like:hover .restaurants__like--full {
-  opacity: 1;
-  transform: scale(1);
-}
-label.restaurants__like:hover .restaurants__like--empty {
-  opacity: 0;
-  transform: scale(0.6);
 }
 
 /* Menu */
@@ -403,7 +397,9 @@ label.restaurants__like:hover .restaurants__like--empty {
   background-color: #353535;
   color: #FFF;
 }
-.footer p, .footer i, .footer a {
+.footer p,
+.footer i,
+.footer a {
   color: #FFF;
   text-decoration: none;
   margin: 0;
@@ -439,6 +435,9 @@ label.restaurants__like:hover .restaurants__like--empty {
 /****** Media queries ***********/
 /* Medium devices (tablets , 768px and up) */
 @media (min-width: 768px) {
+  body {
+    background-color: #FFF;
+  }
   .restaurants__page {
     max-width: 768px;
     margin: -40px auto 0;
@@ -485,6 +484,15 @@ label.restaurants__like:hover .restaurants__like--empty {
   .order {
     padding: 40px 0;
   }
+  /* l'effet survol en desktop */
+  label.restaurants__like:hover .restaurants__like--full {
+    opacity: 1;
+    transform: scale(1);
+  }
+  label.restaurants__like:hover .restaurants__like--empty {
+    opacity: 0;
+    transform: scale(0.6);
+  }
   .footer {
     display: flex;
     flex-direction: row-reverse;
@@ -520,9 +528,6 @@ label.restaurants__like:hover .restaurants__like--empty {
   }
   .footer__bloc__nav__nav--icon {
     margin-right: 5px;
-  }
-  .footer__bloc__nav p {
-    margin-bottom: 0;
   }
 }
 /* Extra large devices (large desktop , 1440px and up) */
