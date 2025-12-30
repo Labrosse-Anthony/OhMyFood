@@ -95,28 +95,28 @@
 }
 /* Animations et Variables */
 .about__btn {
-  transition: all 600ms ease-in-out;
+  transition: all 600ms ease-in-out; /* L'animation commence lentement, accélère, puis ralentit à la fin. */
 }
 .about__btn:hover {
-  filter: brightness(1.1);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  filter: brightness(1.1); /* Augmente la luminosité de l'élément de 110% */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Décalage horizontal, vertical, le flou et la couleur avec opacité */
 }
 .about__btn:active {
-  filter: brightness(0.95);
+  filter: brightness(0.95); /* Augmente la luminosité de l'élément de 95% */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transform: translateY(1px);
+  transform: translateY(1px); /* Déplace physiquement le bouton de 1 pixel vers le bas pour un effet d'enfoncement réaliste */
 }
 
 /* Animations et Variables */
 .function__step:hover .function__icon {
   color: #9356DC;
-  filter: brightness(1.1);
-  transition: color 300ms ease-in-out;
+  filter: brightness(1.1); /* Augmente la luminosité de l'élément de 110% */
+  transition: color 300ms ease-in-out; /* L'animation ease-in-out : commence lentement, accélère, puis ralentit à la fin. */
 }
 .function:active {
   color: #9356DC;
   filter: brightness(0, 90);
-  transform: translateY(1px);
+  transform: translateY(1px); /* Déplace physiquement le bouton de 1 pixel vers le bas pour un effet d'enfoncement réaliste */
   transition: color 300ms ease-in-out;
 }
 
@@ -151,7 +151,7 @@ body ol {
   max-width: 100%; /* Assure que le logo ne dépasse pas la largeur du conteneur */
 }
 
-/*Localisation*/
+/* Localisation */
 .location {
   background-color: #EAEAEA;
   display: flex;
@@ -202,7 +202,7 @@ body ol {
   cursor: pointer;
 }
 
-/*Fonctionnement*/
+/* Fonctionnement */
 .function {
   background-color: #FFF;
   padding: 38px 20px 28px 20px;
@@ -254,7 +254,7 @@ body ol {
   margin-right: 20px;
 }
 
-/*Restaurants*/
+/* Restaurants */
 .restaurants {
   background-color: #F6F6F6;
   padding: 40px 20px;
@@ -263,14 +263,15 @@ body ol {
   margin-top: 0;
 }
 .restaurants__like {
-  height: 2rem;
-  width: 2rem;
-  padding: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
+  height: 2rem;
+  width: 2rem;
+  padding: 0;
+  margin-bottom: 8px;
 }
 
 /* Checkbox cachée */
@@ -290,23 +291,23 @@ input[type=checkbox].checkbox__like:checked + label.restaurants__like .restauran
 
 .restaurants__like--full {
   opacity: 0;
-  font-size: 1.6rem;
+  font-size: 26px;
   cursor: pointer;
-  position: absolute;
-  z-index: 2;
+  position: absolute; /* Position absolue pour se placer au-dessus du cœur vide (qui est aussi en absolute). */
+  z-index: 2; /* Place cet élément au-dessus de l'autre (couche supérieure) grâce à un index plus élevé. */
   background: linear-gradient(0deg, #9356DC 0%, #FF79DA 58%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transform: scale(0.6);
+  transform: scale(0.6); /* Réduit l'élément à 60% de sa taille initiale (souvent utilisé pour créer un effet de "zoom" lors de l'animation). */
   transition: opacity 0.2s linear, transform 0.2s linear;
   transform: scale(0.6);
 }
 
 .restaurants__like--empty {
-  opacity: 1;
-  font-size: 1.6rem;
+  opacity: 1; /* L'élément est totalement visible (opacité à 100%). */
+  font-size: 26px;
   cursor: pointer;
-  position: absolute;
+  position: absolute; /* Position absolue pour pouvoir superposer le cœur plein exactement au-dessus du cœur vide. */
   transition: opacity 0.2s linear, transform 0.2s linear;
   transform: scale(1);
 }
@@ -314,7 +315,6 @@ input[type=checkbox].checkbox__like:checked + label.restaurants__like .restauran
 .card {
   color: #000;
   padding: 0px;
-  height: 250px;
   text-decoration: none;
 }
 .card__restaurant {
@@ -326,6 +326,7 @@ input[type=checkbox].checkbox__like:checked + label.restaurants__like .restauran
   width: 100%;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
   overflow: hidden;
+  position: relative;
 }
 .card__img__content {
   position: relative;
@@ -363,6 +364,7 @@ input[type=checkbox].checkbox__like:checked + label.restaurants__like .restauran
   background-color: #FFF;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+  padding-right: 60px;
 }
 .card__title {
   margin-top: 0;
@@ -374,6 +376,12 @@ input[type=checkbox].checkbox__like:checked + label.restaurants__like .restauran
   font-size: 15px;
   font-weight: 300;
   margin-bottom: 0;
+}
+.card__like--container {
+  position: absolute;
+  background-color: #FFF;
+  bottom: 25px;
+  right: 25px;
 }
 
 /* footer */

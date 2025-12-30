@@ -3,14 +3,14 @@
 .function {
     &__step:hover &__icon {
         color: variables.$primary;   
-        filter : brightness(1.10);
-        transition: color 300ms ease-in-out;
+        filter : brightness(1.10); /* Augmente la luminosité de l'élément de 110% */
+        transition: color 300ms ease-in-out; /* L'animation ease-in-out : commence lentement, accélère, puis ralentit à la fin. */
         }
     
         &:active{
             color: variables.$primary;
             filter : brightness(0,90);
-            transform: translateY(1px);
+            transform: translateY(1px); /* Déplace physiquement le bouton de 1 pixel vers le bas pour un effet d'enfoncement réaliste */
             transition: color 300ms ease-in-out;
         }
 }    

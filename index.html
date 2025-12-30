@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Meta -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ohmyfood est un site de restaurants gastronomiques.">
-    <!-- Titre-->
     <title>Ohmyfood</title>
-    <!--Css-->
     <link rel="stylesheet" href="sass/pages/index.css">
-    <!-- Google fonts and fontawesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap" rel="stylesheet">
@@ -27,27 +23,27 @@
             <span></span>
         </div>
     </div>
+
     <div class="main__container">
         <header class="header">
             <img class="header__logo" src="assets/images/logo/ohmyfood.png" alt="Logo">
         </header>
-        <!--Main-->
+
         <main>
-            <!-- Section Localisation -->
             <div class="location">
                 <i class="fa-solid fa-location-dot location__icon"></i>
                 <h2 class="location__txt">Paris, Belleville</h2>
             </div>
-            <!-- Section A Propos -->
+
             <section class="about">
                 <h2 class="about__title">Réservez le menu qui vous convient</h2>
-                    <p class="about__subtitle">Découvrez des restaurants d’exception, sélectionnés par nos soins.</p>
-                    <a href="#restaurants" class="about__btn">Explorer nos restaurants</a>
+                <p class="about__subtitle">Découvrez des restaurants d’exception, sélectionnés par nos soins.</p>
+                <a href="#restaurants" class="about__btn">Explorer nos restaurants</a>
             </section>
-            <!-- Section Fonctionnement -->
+
             <section class="function">
                 <div class="function__container">
-                <h2 class="function__title">Fonctionnement</h2>
+                    <h2 class="function__title">Fonctionnement</h2>
                     <ol class="function__steps">
                         <li class="function__step">
                             <span class="function__number">1</span>
@@ -67,15 +63,15 @@
                     </ol>
                 </div>
             </section>
-            <!-- Section Restaurants -->
+
             <section class="restaurants" id="restaurants">
                 <div class="restaurants__container">
                     <h2 class="restaurants__title">Restaurants</h2>
                     <div class="cards">
-                        <a class="card" href="./restaurants/la-palette-du-gout.html">
-                            <article class="card__restaurant">
+                        <article class="card__restaurant">
+                            <a class="card" href="./restaurants/la-palette-du-gout.html"> 
                                 <div class="card__img__content">
-                                    <img src="./assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="plat du menu du restaurant la palette du goût" class="card__img">
+                                    <img class="card__img" src="./assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="plat du menu du restaurant la palette du goût">
                                     <span class="card__new">Nouveau</span>
                                 </div>
                                 <div class="card__content">
@@ -83,16 +79,19 @@
                                         <h3 class="card__title">La palette du goût</h3>
                                         <span class="card__subtitle">Ménilmontant</span>
                                     </div>
-                                    <input type="checkbox" id="fav-palette" class="checkbox__like">
-                                    <label for="fav-palette" class="restaurants__like">
-                                        <i class="far fa-heart restaurants__like--empty" alt="coeur"></i>
-                                        <i class="fas fa-heart restaurants__like--full" alt="coeur pelin"></i>
-                                    </label>
-                                </div>   
-                            </article>
-                        </a>
-                        <a class="card" href="./restaurants/la-note-enchantee.html">
-                            <article class="card__restaurant">
+                                </div>
+                            </a>
+                            <div class="card__like--container">   
+                                <input type="checkbox" id="fav-palette" class="checkbox__like">
+                                <label for="fav-palette" class="restaurants__like">
+                                    <i class="far fa-heart restaurants__like--empty"></i>
+                                    <i class="fas fa-heart restaurants__like--full"></i>
+                                </label>
+                            </div>   
+                        </article>
+
+                        <article class="card__restaurant">
+                            <a class="card" href="./restaurants/la-note-enchantee.html">
                                 <div class="card__img__content">
                                     <img src="./assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="plat du menu du restaurant La note enchantée" class="card__img">
                                     <span class="card__new">Nouveau</span>
@@ -102,16 +101,19 @@
                                         <h3 class="card__title">La note enchantée</h3>
                                         <span class="card__subtitle">Charonne</span>
                                     </div>
-                                    <input type="checkbox" id="fav-enchante" class="checkbox__like">
-                                    <label for="fav-enchante" class="restaurants__like">
-                                        <i class="far fa-heart restaurants__like--empty" alt="coeur"></i>
-                                        <i class="fas fa-heart restaurants__like--full" alt="coeur pelin"></i>
-                                    </label>
-                                </div>   
-                            </article>
-                        </a>
-                        <a class="card" href="./restaurants/a-la-francaise.html">
-                            <article class="card__restaurant">
+                                </div>
+                            </a>
+                            <div class="card__like--container">
+                                <input type="checkbox" id="fav-enchante" class="checkbox__like">
+                                <label for="fav-enchante" class="restaurants__like">
+                                    <i class="far fa-heart restaurants__like--empty"></i>
+                                    <i class="fas fa-heart restaurants__like--full"></i>
+                                </label>
+                            </div>   
+                        </article>
+
+                        <article class="card__restaurant">
+                            <a class="card" href="./restaurants/a-la-francaise.html">
                                 <div class="card__img__content">
                                     <img src="./assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="plat du menu du restaurant À la française" class="card__img">
                                 </div>
@@ -120,16 +122,19 @@
                                         <h3 class="card__title">À la française</h3>
                                         <span class="card__subtitle">Cité Rouge</span>
                                     </div>
-                                    <input type="checkbox" id="fav-francaise" class="checkbox__like">
-                                    <label for="fav-francaise" class="restaurants__like">
-                                        <i class="far fa-heart restaurants__like--empty" alt="coeur"></i>
-                                        <i class="fas fa-heart restaurants__like--full" alt="coeur pelin"></i>
-                                    </label>
-                                </div>   
-                            </article>
-                        </a>
-                        <a class="card" href="./restaurants/le-delice-des-sens.html">
-                            <article class="card__restaurant">
+                                </div>
+                            </a>
+                            <div class="card__like--container">
+                                <input type="checkbox" id="fav-francaise" class="checkbox__like">
+                                <label for="fav-francaise" class="restaurants__like">
+                                    <i class="far fa-heart restaurants__like--empty"></i>
+                                    <i class="fas fa-heart restaurants__like--full"></i>
+                                </label>
+                            </div>   
+                        </article>
+
+                        <article class="card__restaurant">
+                            <a class="card" href="./restaurants/le-delice-des-sens.html">
                                 <div class="card__img__content">
                                     <img src="./assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="plat du menu du restaurant Le délice des sens" class="card__img">
                                 </div>
@@ -138,17 +143,21 @@
                                         <h3 class="card__title">Le délice des sens</h3>
                                         <span class="card__subtitle">Folie-Méricourt</span>
                                     </div>
-                                    <input type="checkbox" id="fav-delice" class="checkbox__like">
-                                    <label for="fav-delice" class="restaurants__like">
-                                        <i class="far fa-heart restaurants__like--empty" alt="coeur"></i>
-                                        <i class="fas fa-heart restaurants__like--full" alt="coeur pelin"></i>
-                                    </label>
-                                </div>   
-                            </article>
-                        </a>
+                                </div>
+                            </a>
+                            <div class="card__like--container">   
+                                <input type="checkbox" id="fav-delice" class="checkbox__like">
+                                <label for="fav-delice" class="restaurants__like">
+                                    <i class="far fa-heart restaurants__like--empty"></i>
+                                    <i class="fas fa-heart restaurants__like--full"></i>
+                                </label>
+                            </div>   
+                        </article>
                     </div>
+                </div>
             </section>
         </main>
+
         <footer class="footer">
             <h2 class="footer__logo">ohmyfood</h2>
             <div class="footer__bloc">
@@ -164,6 +173,8 @@
                 <a class="footer__nav--info" href="mailto:avotreecoute@ohmyfood.fr"><p>Contact</p></a>
             </div>
         </footer>
-    </body>
+    </div>
+</body>
 </html>
+
     

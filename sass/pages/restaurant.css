@@ -5,8 +5,10 @@
 /* Animations */
 .cards__1 {
   animation: card_reveal both ease-in-out;
-  animation-duration: 2s;
+  /* L'animation ease-in-out : commence lentement, accélère, puis ralentit à la fin. */
+  /* L'animation both : Applique le style de départ pendant le délai et conserve le style de fin après l'animation. */
   animation-delay: 100ms;
+  animation-duration: 2s;
 }
 .cards__2 {
   animation: card_reveal both ease-in-out;
@@ -48,11 +50,6 @@
   animation-delay: 1500ms;
   animation-duration: 2s;
 }
-.cards__9 {
-  animation: card_reveal both ease-in-out;
-  animation-delay: 1700ms;
-  animation-duration: 2s;
-}
 .cards__10 {
   animation: card_reveal both ease-in-out;
   animation-delay: 1700ms;
@@ -61,38 +58,38 @@
 
 @keyframes card_reveal {
   0% {
-    opacity: 0%;
+    opacity: 0%; /* L'élément est invisible */
   }
   100% {
-    opacity: 100%;
+    opacity: 100%; /* L'élément est visible */
   }
 }
 /* Animations */
 /* Animations */
 .order__btn {
-  transition: all 600ms ease-in-out;
+  transition: all 600ms ease-in-out; /* L'animation commence lentement, accélère, puis ralentit à la fin. */
 }
 .order__btn:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.1); /* Augmente la luminosité de l'élément de 110% */
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 .order__btn:active {
-  filter: brightness(0, 95);
+  filter: brightness(0.95); /* assombrit légèrement le bouton (95% de luminosité) */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transform: translateY(1px);
+  transform: translateY(1px); /* Déplace physiquement le bouton de 1 pixel vers le bas pour un effet d'enfoncement réaliste */
 }
 
 /* Animations */
 .cards {
-  position: relative;
-  display: flex;
-  overflow: hidden;
+  position: relative; /* Permet de positionner les éléments enfants par rapport à ce conteneur . */
+  display: flex; /* Active le mode Flexbox pour aligner le contenu */
+  overflow: hidden; /* Cache tout ce qui dépasse du cadre (essentiel pour l'effet de coulissement) */
   cursor: pointer;
 }
 .cards:hover .cards__checkout {
-  opacity: 1;
-  transition: all 600ms ease;
-  animation: card-check 600ms both;
+  opacity: 1; /* Rend l'élément visible */
+  transition: all 600ms ease; /* Ajoute une transition fluide de 600ms */
+  animation: card-check 600ms both; /* Lance l'animation d'élargissement (0 à 60px) et garde l'état final (both) */
 }
 .cards:hover .cards__info {
   animation: card-checked 600ms both;
@@ -102,12 +99,12 @@
 }
 
 .cards__checkout {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  display: flex; /* Utilise Flexbox pour centrer l'icône à l'intérieur */
+  align-items: center; /* Centre verticalement */
+  justify-content: center; /* Centre horizontalement */
+  overflow: hidden; /* Cache le contenu si la largeur est trop petite */
   opacity: 0;
-  width: 0;
+  width: 0; /*  Largeur nulle par défaut (caché) */
   background-color: #99E2D0;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -121,17 +118,17 @@
   align-content: center;
   height: 26px;
   width: 26px;
-  border-radius: 50%;
+  border-radius: 50%; /* Transforme le carré en cercle parfait */
   font-size: 16px;
   opacity: 1;
 }
 .fa__check > i {
-  margin: 0;
+  margin: 0; /* Enlève les marges par défaut */
   padding: 0;
 }
 
 .cards__info {
-  animation: card-no-checked 600ms both;
+  animation: card-no-checked 600ms both; /* Animation de "retour" : quand on ne survole plus, le texte reprend toute la largeur animation */
 }
 
 .cards__price {
@@ -140,7 +137,7 @@
   bottom: 20px;
 }
 
-@keyframes rotate-check {
+@keyframes rotate-check { /* Animation de rotation pour l'icône check */
   0% {
     transform: rotate(0deg);
   }
@@ -148,7 +145,7 @@
     transform: rotate(360deg);
   }
 }
-@keyframes card-checked {
+@keyframes card-checked { /* Animation du texte quand on survole (rétrécissement) */
   0% {
     width: 100%;
   }
@@ -156,7 +153,7 @@
     width: 75%;
   }
 }
-@keyframes card-no-checked {
+@keyframes card-no-checked { /* Animation du texte quand on ne survole plus (retour à la normale) */
   0% {
     width: 75%;
   }
@@ -164,7 +161,7 @@
     width: 100%;
   }
 }
-@keyframes card-check {
+@keyframes card-check { /* Animation de la boîte verte (coulissement) */
   0% {
     width: 0;
   }
@@ -260,23 +257,23 @@ input[type=checkbox].checkbox__like:checked + label.restaurants__like .restauran
 
 .restaurants__like--full {
   opacity: 0;
-  font-size: 1.6rem;
+  font-size: 26px;
   cursor: pointer;
-  position: absolute;
-  z-index: 2;
+  position: absolute; /* Position absolue pour se placer au-dessus du cœur vide (qui est aussi en absolute). */
+  z-index: 2; /* Place cet élément au-dessus de l'autre (couche supérieure) grâce à un index plus élevé. */
   background: linear-gradient(0deg, #9356DC 0%, #FF79DA 58%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transform: scale(0.6);
+  transform: scale(0.6); /* Réduit l'élément à 60% de sa taille initiale (souvent utilisé pour créer un effet de "zoom" lors de l'animation). */
   transition: opacity 0.2s linear, transform 0.2s linear;
   transform: scale(0.6);
 }
 
 .restaurants__like--empty {
-  opacity: 1;
-  font-size: 1.6rem;
+  opacity: 1; /* L'élément est totalement visible (opacité à 100%). */
+  font-size: 26px;
   cursor: pointer;
-  position: absolute;
+  position: absolute; /* Position absolue pour pouvoir superposer le cœur plein exactement au-dessus du cœur vide. */
   transition: opacity 0.2s linear, transform 0.2s linear;
   transform: scale(1);
 }

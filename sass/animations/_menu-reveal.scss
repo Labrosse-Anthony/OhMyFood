@@ -2,9 +2,11 @@
 
 .cards {
   &__1 {
-      animation : card_reveal both ease-in-out ;
-      animation-duration : 2s;
+      animation : card_reveal both ease-in-out ; 
+      /* L'animation ease-in-out : commence lentement, accélère, puis ralentit à la fin. */
+      /* L'animation both : Applique le style de départ pendant le délai et conserve le style de fin après l'animation. */
       animation-delay : 100ms;
+      animation-duration : 2s;
   }
     
   &__2 {
@@ -54,14 +56,8 @@
     animation-delay : 1500ms;
     animation-duration : 2s;
   }
-    
-  &__9 {
-    animation : card_reveal both ease-in-out;
-    animation-delay : 1700ms;
-    animation-duration : 2s;
-  }
 
-    &__10 {
+  &__10 {
     animation : card_reveal both ease-in-out;
     animation-delay : 1700ms;
     animation-duration : 2s;
@@ -70,9 +66,9 @@
 
 @keyframes card_reveal {
   0% {
-    opacity : 0%;
+    opacity : 0%; /* L'élément est invisible */
   }
   100% {
-    opacity : 100%;
+    opacity : 100%; /* L'élément est visible */
   }
 }

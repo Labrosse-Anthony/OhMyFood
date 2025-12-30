@@ -1,15 +1,15 @@
 @use'../variables/variables';
 
 .cards {
-  position : relative;
-  display: flex;
-  overflow: hidden;
+  position : relative; /* Permet de positionner les éléments enfants par rapport à ce conteneur . */
+  display: flex; /* Active le mode Flexbox pour aligner le contenu */
+  overflow: hidden; /* Cache tout ce qui dépasse du cadre (essentiel pour l'effet de coulissement) */
   cursor: pointer;
 
   &:hover .cards__checkout {
-    opacity : 1;
-    transition: all 600ms ease;
-    animation: card-check 600ms both;
+    opacity : 1; /* Rend l'élément visible */
+    transition: all 600ms ease; /* Ajoute une transition fluide de 600ms */
+    animation: card-check 600ms both; /* Lance l'animation d'élargissement (0 à 60px) et garde l'état final (both) */
   }
 
   &:hover .cards__info {
@@ -22,12 +22,12 @@
 }
 
 .cards__checkout {
-  display : flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  display : flex; /* Utilise Flexbox pour centrer l'icône à l'intérieur */
+  align-items: center; /* Centre verticalement */
+  justify-content: center; /* Centre horizontalement */
+  overflow: hidden; /* Cache le contenu si la largeur est trop petite */
   opacity : 0;
-  width: 0;
+  width: 0; /*  Largeur nulle par défaut (caché) */
   background-color : variables.$green;
   border-top-right-radius : 15px;
   border-bottom-right-radius : 15px;
@@ -41,18 +41,18 @@
   align-content: center;
   height: 26px;
   width: 26px;
-  border-radius: 50%;
+  border-radius: 50%; /* Transforme le carré en cercle parfait */
   font-size: 16px;
   opacity: 1;
 
   & > i {
-    margin: 0;
+    margin: 0; /* Enlève les marges par défaut */
     padding: 0;
   }
 }
 
 .cards__info {
-    animation : card-no-checked 600ms both;
+    animation : card-no-checked 600ms both; /* Animation de "retour" : quand on ne survole plus, le texte reprend toute la largeur animation */
   }
 
 .cards__price {
@@ -61,22 +61,22 @@
   bottom : 20px;
 }
 
-@keyframes rotate-check {
+@keyframes rotate-check { /* Animation de rotation pour l'icône check */
   0% {transform: rotate(0deg);}
   100% {transform: rotate(360deg);}
 }
 
-@keyframes card-checked {
+@keyframes card-checked { /* Animation du texte quand on survole (rétrécissement) */
   0% {width : 100%}
   100% {width: 75%;}
 }
 
-@keyframes card-no-checked {
+@keyframes card-no-checked { /* Animation du texte quand on ne survole plus (retour à la normale) */
   0% {width: 75%;}
   100% {width : 100%}
 }
 
-@keyframes card-check {
+@keyframes card-check { /* Animation de la boîte verte (coulissement) */
   0% {width: 0;}
   100% {width: 60px;}
 }
