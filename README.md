@@ -1,6 +1,6 @@
 # Ohmyfood!
 
-![Aperçu de l'application](assets/images/ohmyfood.png)
+![Aperçu de l'application](assets/images/maquette.png)
 - Ce projet a été réalisé dans le cadre du projet n°4 de la formation Intégrateur Web d’OpenClassrooms.
 
 - OhMyFood est une startup qui ambitionne de devenir un acteur majeur du secteur de la gastronomie.
