@@ -4,45 +4,45 @@
 /***** Couleurs *****/
 /* Animations et Variables */
 .loader__container {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: fixed; /* Fixe l'élément par rapport à la fenêtre du navigateur (reste visible au scroll) */
+  top: 0; /* Positionne l'élément tout en haut de la fenêtre */
+  left: 0; /* Positionne l'élément tout à gauche de la fenêtre */
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.3);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  z-index: 9999;
+  z-index: 9999; /* Assure que le loader soit au-dessus de presque tous les autres éléments du site */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: fadeOut 1s forwards;
+  justify-content: center; /* Centre l'élément enfant (le spinner) horizontalement */
+  align-items: center; /* Centre l'élément enfant (le spinner) verticalement */
+  animation: fadeOut 1s forwards; /* Lance l'animation 'fadeOut' sur 1s et garde l'état final (forwards) */
   animation-delay: 2s;
 }
 
 .loader__spinner {
-  position: relative;
+  position: relative; /* Le conteneur reste dans le flux normal de la page , il sert de rèpere pour le loader */
   border-radius: 50%;
   height: 96px;
   width: 96px;
-  animation: rotate_3922 1s linear infinite;
+  animation: rotate_3922 1s linear infinite; /* Animation de rotation continue, linéaire, durée 1s */
   background-color: #9356DC;
   background-image: linear-gradient(#9356DC, #FF79DA, #84cdfa, #5ad1cd);
-  z-index: 10001;
-  -webkit-mask-image: radial-gradient(circle, transparent 40%, black 41%);
-  mask-image: radial-gradient(circle, transparent 40%, black 41%);
+  z-index: 10001; /* Place le spinner au-dessus du conteneur du loader */
+  -webkit-mask-image: radial-gradient(circle, transparent 40%, black 41%); /* Version Chrome et Safari : crée l'effet d'anneau évidé */
+  mask-image: radial-gradient(circle, transparent 40%, black 41%); /* Version firefox, Edge et récente Chrome : crée l'effet d'anneau évidé */
 }
 
 .loader__spinner span {
-  position: absolute;
+  position: absolute; /* Position absolue pour se superposer au spinner */
   border-radius: 50%;
   height: 100%;
   width: 100%;
-  background-image: inherit;
+  background-image: inherit; /* Hérite du même dégradé de couleurs que le parent */
 }
 
 .loader__spinner span:nth-of-type(1) {
-  filter: blur(5px);
+  filter: blur(5px); /* Applique un flou léger de 5px sur le premier span */
 }
 
 .loader__spinner span:nth-of-type(2) {
@@ -54,43 +54,44 @@
 }
 
 .loader__spinner span:nth-of-type(4) {
-  filter: blur(50px);
+  filter: blur(50px); /* Applique un flou très fort de 50px sur le quatrième span */
 }
 
 .loader__spinner::after {
-  content: "";
-  position: absolute;
+  content: ""; /* Nécessaire pour afficher le pseudo-élément ::after */
+  position: absolute; /* Position absolue pour se superposer au spinner */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: transparent;
+  backdrop-filter: none; /* Pas de flou d'arrière-plan sur cet élément spécifique */
+  -webkit-backdrop-filter: none; /* Version Webkit (Safari/Chrome) pour annuler le filtre */
   backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border-radius: 50%;
+  border-radius: 50%; /* Cercle parfait */
 }
 
 @keyframes fadeOut {
   0% {
-    opacity: 1;
+    opacity: 1; /* Complètement visible au début */
     visibility: visible;
     -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px); /* Le flou d'arrière-plan est actif */
   }
   100% {
-    opacity: 0;
-    visibility: hidden;
+    opacity: 0; /* Complètement transparent à la fin */
+    visibility: hidden; /* Invissible */
     -webkit-backdrop-filter: blur(0px);
-            backdrop-filter: blur(0px);
-    pointer-events: none;
+            backdrop-filter: blur(0px); /* Le flou d'arrière-plan est supprimé */
+    pointer-events: none; /* Désactive les clics */
   }
 }
 @keyframes rotate_3922 {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0deg); /* Commence la rotation à 0 degré */
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(360deg); /* Termine la rotation à 360 degrés */
   }
 }
 /* Animations et Variables */
@@ -121,9 +122,10 @@
 }
 
 /* Animations et Variables */
+/* Remplace import : Importe le fichier des variables (couleurs, polices, etc.) pour les réutiliser */
 /* General */
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Cela permet d'inclure le padding et la bordure dans la largeur/hauteur totale de l'élément */
 }
 
 body {
@@ -138,12 +140,12 @@ body ol {
 .header {
   position: relative; /* Positionnement relatif pour que d'autres éléments puissent s'y positionner */
   z-index: 3; /* Assure que le header est au-dessus du reste du contenu */
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25); /* Place le header au-dessus des autres éléments */
   padding: 16px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row; /* Aligne icône et texte horizontalement */
+  align-items: center; /* Aligne les éléments sur une ligne horizontale */
+  justify-content: center; /* Centre verticalement les éléments dans le conteneur */
   flex-wrap: nowrap; /* Empêche le retour à la ligne des éléments enfants */
 }
 .header__logo {
@@ -177,7 +179,7 @@ body ol {
   text-align: center;
   background-color: #F3F3F3;
   padding: 35px 25px 60px 25px;
-  position: relative;
+  position: relative; /*  Le conteneur reste dans le flux normal de la page */
 }
 .about__title {
   font-size: 25px;
@@ -221,7 +223,7 @@ body ol {
   align-items: center;
   justify-content: center;
   margin-bottom: 25px;
-  position: relative;
+  position: relative; /*  Le conteneur reste dans le flux normal de la page */
   height: 74px;
   width: 100%;
   border-radius: 25px;
@@ -266,7 +268,7 @@ body ol {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  position: relative; /* Pour empiler les cœurs (vide et plein) */
   overflow: hidden;
   height: 2rem;
   width: 2rem;
@@ -276,7 +278,7 @@ body ol {
 
 /* Checkbox cachée */
 input[type=checkbox].checkbox__like {
-  display: none;
+  display: none; /* Cache la case à cocher visuellement */
 }
 
 /* État cliqué (checked) */

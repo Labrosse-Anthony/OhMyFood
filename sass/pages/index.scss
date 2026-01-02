@@ -4,10 +4,11 @@
 @use '../animations/explore-btn';
 @use '../animations/function-icons';
 @use '../animations/heart-like';
+/* Remplace import : Importe le fichier des variables (couleurs, polices, etc.) pour les réutiliser */
 
 /* General */
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Cela permet d'inclure le padding et la bordure dans la largeur/hauteur totale de l'élément */
 }
 
 body {
@@ -23,12 +24,12 @@ body {
 .header {
   position: relative; /* Positionnement relatif pour que d'autres éléments puissent s'y positionner */
   z-index: 3; /* Assure que le header est au-dessus du reste du contenu */
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25); /* Place le header au-dessus des autres éléments */
   padding: 16px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row; /* Aligne icône et texte horizontalement */
+  align-items: center; /* Aligne les éléments sur une ligne horizontale */
+  justify-content: center; /* Centre verticalement les éléments dans le conteneur */
   flex-wrap: nowrap; /* Empêche le retour à la ligne des éléments enfants */
 
   &__logo {
@@ -61,11 +62,11 @@ body {
 
 .about {
   display: flex;
-  flex-direction: column;
-  text-align: center;
+  flex-direction: column; 
+  text-align: center; 
   background-color: variables.$backgournd-about;
   padding: 35px 25px 60px 25px;
-  position: relative;
+  position: relative; /*  Le conteneur reste dans le flux normal de la page */
 
   &__title {
     font-size: 25px;
@@ -114,7 +115,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-bottom: 25px;
-    position: relative;
+    position: relative; /*  Le conteneur reste dans le flux normal de la page */
     height: 74px;
     width: 100%;
     border-radius: 25px;
@@ -164,7 +165,7 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: relative; /* Pour empiler les cœurs (vide et plein) */
     overflow: hidden;
     height: 2rem;
     width: 2rem;
@@ -175,7 +176,7 @@ body {
 
 /* Checkbox cachée */
 input[type="checkbox"].checkbox__like {
-  display: none;
+  display: none; /* Cache la case à cocher visuellement */
 }
 
 /* État cliqué (checked) */
