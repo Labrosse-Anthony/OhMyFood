@@ -192,6 +192,9 @@ body ol {
   margin-bottom: 35px;
 }
 .about__btn {
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto;
   font-size: 16px;
   font-weight: 500;
   color: #FFF;
@@ -202,6 +205,8 @@ body ol {
   background: linear-gradient(#FF79DA, #9356DC);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  width: 100%;
+  max-width: 470px;
 }
 
 /* Fonctionnement */
@@ -221,13 +226,13 @@ body ol {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: 25px;
   position: relative; /*  Le conteneur reste dans le flux normal de la page */
   height: 74px;
   width: 100%;
   border-radius: 25px;
-  padding-left: 0;
+  padding-left: 35px;
 }
 .function__steps {
   padding-left: 10px;
@@ -456,8 +461,9 @@ input[type=checkbox].checkbox__like:checked + label.restaurants__like .restauran
   .function__step {
     flex: 1;
     justify-content: center;
-    padding-left: 0 15px 0 25px;
     font-size: 14px;
+    font-weight: 500;
+    padding: 0;
   }
   .function__number {
     left: -12px;
@@ -518,8 +524,8 @@ input[type=checkbox].checkbox__like:checked + label.restaurants__like .restauran
   .function__step {
     flex: 1;
     margin-bottom: 0;
-    justify-content: center;
-    padding-left: 0;
+    justify-content: flex-start;
+    padding-left: 40px;
   }
   .function__icon {
     padding-left: 0;
