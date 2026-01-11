@@ -1,23 +1,27 @@
 @use '../variables/variables';
 
 .cards {
-  position: relative; /* Permet de positionner les éléments enfants par rapport à ce conteneur . */
+  position: relative; /* Permet de positionner les éléments enfants par rapport à ce conteneur. */
   display: flex; /* Active le mode Flexbox pour aligner le contenu */
   overflow: hidden; /* Cache tout ce qui dépasse du cadre (essentiel pour l'effet de coulissement) */
   cursor: pointer;
 
-  &:hover .cards__checkout {
-    opacity: 1; /* Rend l'élément visible */
-    transition: all 600ms ease; /* Ajoute une transition fluide de 600ms */
-    animation: card-check 600ms both; /* Lance l'animation d'élargissement (0 à 60px) et garde l'état final (both) */
-  }
+  &:hover, &:focus {
+    outline: none;
 
-  &:hover .cards__info {
-    animation: card-checked 600ms both;
-  }
+    .cards__checkout {
+      opacity: 1; /* Rend l'élément visible */
+      transition: all 600ms ease; /* Ajoute une transition fluide de 600ms */
+      animation: card-check 600ms both; /* Lance l'animation d'élargissement (0 à 60px) et garde l'état final (both) */
+    }
 
-  &:hover .fa__check {
-    animation: rotate-check 600ms ease;
+    .cards__info {
+      animation: card-checked 600ms both;
+    }
+
+    .fa__check {
+      animation: rotate-check 600ms ease;
+    }
   }
 }
 
@@ -52,7 +56,7 @@
 }
 
 .cards__info {
-  animation: card-no-checked 600ms both; /* Animation de "retour" : quand on ne survole plus, le texte reprend toute la largeur animation */
+  animation: card-no-checked 600ms both; /* Animation de "retour" : quand on ne survole plus, le texte reprend toute la largeur */
 }
 
 .cards__price {

@@ -81,20 +81,23 @@
 
 /* Animations */
 .cards {
-  position: relative; /* Permet de positionner les éléments enfants par rapport à ce conteneur . */
+  position: relative; /* Permet de positionner les éléments enfants par rapport à ce conteneur. */
   display: flex; /* Active le mode Flexbox pour aligner le contenu */
   overflow: hidden; /* Cache tout ce qui dépasse du cadre (essentiel pour l'effet de coulissement) */
   cursor: pointer;
 }
-.cards:hover .cards__checkout {
+.cards:hover, .cards:focus {
+  outline: none;
+}
+.cards:hover .cards__checkout, .cards:focus .cards__checkout {
   opacity: 1; /* Rend l'élément visible */
   transition: all 600ms ease; /* Ajoute une transition fluide de 600ms */
   animation: card-check 600ms both; /* Lance l'animation d'élargissement (0 à 60px) et garde l'état final (both) */
 }
-.cards:hover .cards__info {
+.cards:hover .cards__info, .cards:focus .cards__info {
   animation: card-checked 600ms both;
 }
-.cards:hover .fa__check {
+.cards:hover .fa__check, .cards:focus .fa__check {
   animation: rotate-check 600ms ease;
 }
 
@@ -128,7 +131,7 @@
 }
 
 .cards__info {
-  animation: card-no-checked 600ms both; /* Animation de "retour" : quand on ne survole plus, le texte reprend toute la largeur animation */
+  animation: card-no-checked 600ms both; /* Animation de "retour" : quand on ne survole plus, le texte reprend toute la largeur */
 }
 
 .cards__price {
