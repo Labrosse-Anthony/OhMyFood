@@ -1,258 +1,311 @@
 @charset "UTF-8";
-/* Animations */
+/* =========================================
+   IMPORTS ET VARIABLES
+========================================= */
 /***** Variables *****/
 /***** Couleurs *****/
-/* Animations */
-.cards__1 {
-  animation: card_reveal both ease-in-out;
-  /* L'animation ease-in-out : commence lentement, accélère, puis ralentit à la fin. */
-  /* L'animation both : Applique le style de départ pendant le délai et conserve le style de fin après l'animation. */
-  animation-delay: 100ms;
-  animation-duration: 2s;
-}
-.cards__2 {
-  animation: card_reveal both ease-in-out;
-  animation-delay: 250ms;
-  animation-duration: 2s;
-}
-.cards__3 {
-  animation: card_reveal both ease-in-out;
-  animation-delay: 400ms;
-  animation-duration: 2s;
-}
-.cards__4 {
-  animation: card_reveal both ease-in-out;
-  animation-delay: 600ms;
-  animation-duration: 2s;
-}
-.cards__5 {
-  animation: card_reveal both ease-in-out;
-  animation-delay: 900ms;
-  animation-duration: 2s;
-}
-.cards__6 {
-  animation: card_reveal both ease-in-out;
-  animation-delay: 1000ms;
-  animation-duration: 2s;
-}
-.cards__7 {
-  animation: card_reveal both ease-in-out;
-  animation-delay: 1100ms;
-  animation-duration: 2s;
-}
-.cards__8 {
-  animation: card_reveal both ease-in-out;
-  animation-delay: 1300ms;
-  animation-duration: 2s;
-}
-.cards__9 {
-  animation: card_reveal both ease-in-out;
-  animation-delay: 1500ms;
-  animation-duration: 2s;
-}
-.cards__10 {
-  animation: card_reveal both ease-in-out;
-  animation-delay: 1700ms;
-  animation-duration: 2s;
+/* =========================================
+   IMPORTS ET VARIABLES
+========================================= */
+.loader__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeOut 1s forwards;
+  animation-delay: 2s;
 }
 
-@keyframes card_reveal {
+.loader__spinner {
+  position: relative;
+  border-radius: 50%;
+  height: 96px;
+  width: 96px;
+  animation: rotate_3922 1s linear infinite;
+  background-color: #9356DC;
+  background-image: linear-gradient(#9356DC, #FF79DA, #84cdfa, #5ad1cd);
+  z-index: 10001;
+  -webkit-mask-image: radial-gradient(circle, transparent 40%, black 41%);
+  mask-image: radial-gradient(circle, transparent 40%, black 41%);
+}
+
+.loader__spinner span {
+  position: absolute;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  background-image: inherit;
+}
+
+.loader__spinner span:nth-of-type(1) {
+  filter: blur(5px);
+}
+
+.loader__spinner span:nth-of-type(2) {
+  filter: blur(10px);
+}
+
+.loader__spinner span:nth-of-type(3) {
+  filter: blur(25px);
+}
+
+.loader__spinner span:nth-of-type(4) {
+  filter: blur(50px);
+}
+
+.loader__spinner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  backdrop-filter: none;
+  backdrop-filter: none;
+  border-radius: 50%;
+}
+
+@keyframes fadeOut {
   0% {
-    opacity: 0; /* L'élément est invisible */
+    opacity: 1;
+    visibility: visible;
+    backdrop-filter: blur(10px);
   }
   100% {
-    opacity: 1; /* L'élément est visible */
+    opacity: 0;
+    visibility: hidden;
+    backdrop-filter: blur(0px);
+    pointer-events: none;
   }
 }
-/* Animations */
-/* Animations */
-.order__btn {
-  transition: all 600ms ease-in-out; /* L'animation commence lentement, accélère, puis ralentit à la fin. */
-}
-.order__btn:hover {
-  filter: brightness(1.1); /* Augmente la luminosité de l'élément de 110% */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-}
-.order__btn:active {
-  filter: brightness(0.95); /* assombrit légèrement le bouton (95% de luminosité) */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transform: translateY(1px); /* Déplace physiquement le bouton de 1 pixel vers le bas pour un effet d'enfoncement réaliste */
-}
-
-/* Animations */
-.cards {
-  position: relative; /* Permet de positionner les éléments enfants par rapport à ce conteneur. */
-  display: flex; /* Active le mode Flexbox pour aligner le contenu */
-  overflow: hidden; /* Cache tout ce qui dépasse du cadre (essentiel pour l'effet de coulissement) */
-  cursor: pointer;
-}
-.cards:hover, .cards:focus {
-  outline: none;
-}
-.cards:hover .cards__checkout, .cards:focus .cards__checkout {
-  opacity: 1; /* Rend l'élément visible */
-  transition: all 600ms ease; /* Ajoute une transition fluide de 600ms */
-  animation: card-check 600ms both; /* Lance l'animation d'élargissement (0 à 60px) et garde l'état final (both) */
-}
-.cards:hover .cards__info, .cards:focus .cards__info {
-  animation: card-checked 600ms both;
-}
-.cards:hover .fa__check, .cards:focus .fa__check {
-  animation: rotate-check 600ms ease;
-}
-
-.cards__checkout {
-  display: flex; /* Utilise Flexbox pour centrer l'icône à l'intérieur */
-  align-items: center; /* Centre verticalement */
-  justify-content: center; /* Centre horizontalement */
-  overflow: hidden; /* Cache le contenu si la largeur est trop petite */
-  opacity: 0;
-  width: 0; /* Largeur nulle par défaut (caché) */
-  background-color: #99E2D0;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-}
-
-.fa__check {
-  background-color: #FFF;
-  color: #99E2D0;
-  display: flex;
-  text-align: center;
-  align-content: center;
-  height: 26px;
-  width: 26px;
-  border-radius: 50%; /* Transforme le carré en cercle parfait */
-  font-size: 16px;
-  opacity: 1;
-}
-.fa__check > i {
-  margin: 0; /* Enlève les marges par défaut */
-  padding: 0;
-}
-
-.cards__info {
-  animation: card-no-checked 600ms both; /* Animation de "retour" : quand on ne survole plus, le texte reprend toute la largeur */
-}
-
-.cards__price {
-  padding-right: 10px;
-  right: 20px;
-  bottom: 20px;
-}
-
-@keyframes rotate-check {
-  /* Animation de rotation pour l'icône check */
-  0% {
+@keyframes rotate_3922 {
+  from {
     transform: rotate(0deg);
   }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
-@keyframes card-checked {
-  /* Animation du texte quand on survole (rétrécissement) */
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 75%;
-  }
+/* =========================================
+   IMPORTS ET VARIABLES
+========================================= */
+.about__btn {
+  transition: all 600ms ease-in-out;
 }
-@keyframes card-no-checked {
-  /* Animation du texte quand on ne survole plus (retour à la normale) */
-  0% {
-    width: 75%;
-  }
-  100% {
-    width: 100%;
-  }
+.about__btn:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
-@keyframes card-check {
-  /* Animation de la boîte verte (coulissement) */
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 60px;
-  }
+.about__btn:active {
+  filter: brightness(0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
 }
-/* General */
+
+/* =========================================
+   IMPORTS ET VARIABLES
+========================================= */
+.function__step:hover .function__icon {
+  color: #9356DC;
+  filter: brightness(1.1);
+  transition: color 300ms ease-in-out;
+}
+.function:active {
+  color: #9356DC;
+  filter: brightness(0.9);
+  transform: translateY(1px);
+  transition: color 300ms ease-in-out;
+}
+
+/* =========================================
+   IMPORTS ET VARIABLES
+========================================= */
+/* =========================================
+   GENERAL
+========================================= */
 * {
-  margin: 0;
-  font-family: Roboto;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: #F6F6F6;
+  margin: 0;
+  font-family: Roboto;
+}
+body ol {
+  padding: 0;
 }
 
-/* En Tete */
+/* =========================================
+   EN-TÊTE (HEADER)
+========================================= */
 .header {
+  position: relative;
+  z-index: 3;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  padding: 16px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 14px 0;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  flex-wrap: nowrap;
 }
 .header__logo {
   height: 36px;
-  width: 100%;
-}
-.header__return {
-  color: #000;
-  margin-left: 17px;
+  max-width: 100%;
 }
 
-.restaurants__img {
-  height: 275px;
-  width: 100%;
-  display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-/* Image */
-.restaurants {
-  position: relative;
-}
-.restaurants__page {
-  background-color: #F6F6F6;
-  position: relative;
-  z-index: 1;
-  border-top-right-radius: 30px;
-  border-top-left-radius: 30px;
-  margin-top: -40px;
-}
-.restaurants__header {
+/* =========================================
+   LOCALISATION
+========================================= */
+.location {
+  background-color: #EAEAEA;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  padding: 32px 17px;
+  justify-content: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+}
+.location__icon {
+  margin-right: 17px;
+}
+.location__txt {
+  font-size: 16px;
+  font-weight: 500;
+  color: #353535;
+}
+
+/* =========================================
+   SECTION À PROPOS (ABOUT)
+========================================= */
+.about {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #F3F3F3;
+  padding: 35px 25px 60px 25px;
+  position: relative;
+}
+.about__title {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.about__subtitle {
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 35px;
+}
+.about__btn {
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto;
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFF;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  background: linear-gradient(#FF79DA, #9356DC);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  width: 100%;
+  max-width: 470px;
+}
+
+/* =========================================
+   SECTION FONCTIONNEMENT
+========================================= */
+.function {
+  background-color: #FFF;
+  padding: 38px 20px 28px 20px;
+}
+.function__container {
+  max-width: 470px;
+  margin: 0 auto;
+}
+.function__title {
+  font-size: 24px;
+}
+.function__step {
+  background-color: #EAEAEA;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 25px;
+  position: relative;
+  height: 74px;
+  width: 100%;
+  border-radius: 25px;
+  padding-left: 35px;
+}
+.function__steps {
+  padding-left: 10px;
+  cursor: pointer;
+}
+.function__number {
+  position: absolute;
+  color: #FFF;
+  background-color: #9356DC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  left: -12px;
+}
+.function__icon {
+  color: #7E7E7E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  margin-right: 20px;
+}
+
+/* =========================================
+   SECTION RESTAURANTS
+========================================= */
+.restaurants {
+  background-color: #F6F6F6;
+  padding: 40px 20px;
 }
 .restaurants__title {
-  font-family: Shrikhand;
-  font-size: 28px;
-  font-weight: 400;
+  margin-top: 0;
 }
 .restaurants__like {
-  height: 2rem;
-  width: 2rem;
-  padding: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
+  height: 2rem;
+  width: 2rem;
+  padding: 0;
+  margin-bottom: 8px;
 }
 
-/* Checkbox cachée */
+/* =========================================
+   EFFETS LIKES (CHECKBOX)
+========================================= */
 input[type=checkbox].checkbox__like {
   display: none;
 }
 
-/* État cliqué (checked) */
 input[type=checkbox].checkbox__like:checked + label.restaurants__like .restaurants__like--full {
   opacity: 1;
   transform: scale(1);
@@ -266,135 +319,103 @@ input[type=checkbox].checkbox__like:checked + label.restaurants__like .restauran
   opacity: 0;
   font-size: 26px;
   cursor: pointer;
-  position: absolute; /* Position absolue pour se placer au-dessus du cœur vide (qui est aussi en absolute). */
-  z-index: 2; /* Place cet élément au-dessus de l'autre (couche supérieure) grâce à un index plus élevé. */
+  position: absolute;
+  z-index: 2;
   background: linear-gradient(0deg, #9356DC 0%, #FF79DA 58%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  transform: scale(0.6); /* Réduit l'élément à 60% de sa taille initiale (souvent utilisé pour créer un effet de "zoom" lors de l'animation). */
-  transition: opacity 0.2s linear, transform 0.2s linear;
   transform: scale(0.6);
+  transition: opacity 0.2s linear, transform 0.2s linear;
 }
 
 .restaurants__like--empty {
-  opacity: 1; /* L'élément est totalement visible (opacité à 100%). */
+  opacity: 1;
   font-size: 26px;
   cursor: pointer;
-  position: absolute; /* Position absolue pour pouvoir superposer le cœur plein exactement au-dessus du cœur vide. */
+  position: absolute;
   transition: opacity 0.2s linear, transform 0.2s linear;
   transform: scale(1);
 }
 
-/* Menu */
-.menu__card {
+/* =========================================
+   CARTES RESTAURANTS
+========================================= */
+.card {
+  color: #000;
+  padding: 0px;
+  text-decoration: none;
+}
+.card__restaurant {
+  background-color: #FFF;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
-  padding: 0 13px 40px 13px;
+  margin-bottom: 18px;
+  width: 100%;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  position: relative;
 }
-
-.entrees {
-  padding-bottom: 40px;
+.card__img__content {
+  position: relative;
 }
-.entrees__title {
-  font-size: 14px;
-  font-weight: 300;
-  padding-bottom: 8px;
-  margin-bottom: 15px;
-  width: 30px;
-  border-bottom: 3px solid #99E2D0;
+.card__img {
+  height: 180px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-
-.plats {
-  padding-bottom: 40px;
-}
-.plats__title {
-  font-size: 14px;
-  font-weight: 300;
-  padding-bottom: 8px;
-  margin-bottom: 15px;
-  width: 30px;
-  border-bottom: 3px solid #99E2D0;
-}
-
-.desserts {
-  padding-bottom: 40px;
-}
-.desserts__title {
-  font-size: 14px;
-  font-weight: 300;
-  padding-bottom: 8px;
-  width: 30px;
-  border-bottom: 3px solid #99E2D0;
-}
-
-.cards {
-  background-color: #FFF;
+.card__new {
+  color: #008766;
+  background-color: #99E2D0;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
-  margin-top: 12px;
-  height: 60px;
-  cursor: pointer;
-}
-.cards__info {
-  padding: 12px 15px 12px 15px;
-  flex: 1;
-  min-width: 0;
-  white-space: 0;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.cards__title {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 14px;
-  font-weight: 700;
-}
-.cards__description {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px 0px 12px 0px;
-}
-.cards__text {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 12px;
-  font-weight: 300;
-  width: 80%;
-}
-.cards__price {
-  font-weight: 700;
-  font-size: 14px;
-}
-
-/* Bouton commande */
-.order {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: absolute;
+  width: 80px;
+  height: 29px;
+  border-radius: 3px;
+  right: 15px;
+  top: 15px;
 }
-.order__btn {
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  color: #FFF;
-  text-align: center;
-  padding: 15px 23px;
-  border: none;
-  border-radius: 25px;
-  background: linear-gradient(#FF79DA, #9356DC);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
+.cardnew--hidden {
+  visibility: hidden;
+}
+.card__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 15px;
+  background-color: #FFF;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding-right: 60px;
+}
+.card__title {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.card__subtitle {
+  font-size: 15px;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+.card__like--container {
+  position: absolute;
+  background-color: #FFF;
+  bottom: 25px;
+  right: 25px;
 }
 
-/* footer */
+/* =========================================
+   FOOTER
+========================================= */
 .footer {
   padding: 22px 25px;
   background-color: #353535;
@@ -434,60 +455,121 @@ input[type=checkbox].checkbox__like:checked + label.restaurants__like .restauran
   font-size: 15px;
 }
 
-/* Le code ci-dessous correspond à la version responsive uniquement */
-/****** Media queries ***********/
+/* =========================================
+   MEDIA QUERIES
+========================================= */
 /* Medium devices (tablets , 768px and up) */
 @media (min-width: 768px) {
-  body {
-    background-color: #FFF;
+  .about {
+    padding: 30px 20px;
   }
-  .restaurants__page {
-    max-width: 768px;
-    margin: -40px auto 0;
+  .about__title {
+    font-size: 28px;
+  }
+  .about__btn {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+    display: block;
+  }
+  .function__container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .function__steps {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0;
+  }
+  .function__step {
+    flex: 1;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0;
+  }
+  .function__number {
+    left: -12px;
+  }
+  .function__icon {
+    margin-right: 15px;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+    row-gap: 30px;
+  }
+  .card {
     width: 100%;
-  }
-  .menu__card {
-    padding: 0 40px 40px 40px;
-  }
-  .footer {
-    padding: 40px 25px;
+    height: auto;
   }
 }
 /* Desktop devices (desktop , 1024px and up) */
 @media (min-width: 1024px) {
-  .restaurants__page {
-    background-color: #EAEAEA;
-    position: relative;
-    width: 80%;
-    max-width: 1055px;
-    margin: -64px auto 0 auto;
-    z-index: 2;
-    border-top-right-radius: 40px;
-    border-top-right-radius: 40px;
+  .header {
+    padding: 30px 0;
   }
-  .restaurants__header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    padding: 40px 0px;
+  .header__logo {
+    height: 34px;
   }
-  .restaurants__img {
-    height: 400px;
-    width: 100%;
+  .about {
+    padding: 30px 0;
+    margin: 0;
+  }
+  .about__btn {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  .function {
+    padding: 50px 0px;
+  }
+  .function__container {
+    max-width: 1080px;
     display: block;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: center;
-       object-position: center;
+    margin: 0 auto;
+    padding: 0 20px;
   }
-  .menu__card {
-    padding: 0 15%;
+  .function__title {
+    margin-left: 0;
+    margin-bottom: 25px;
   }
-  .order {
-    padding: 40px 0;
+  .function__steps {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 35px;
+    padding: 0;
+    margin-left: 0;
   }
-  /* l'effet survol en desktop */
+  .function__step {
+    flex: 1;
+    margin-bottom: 0;
+    justify-content: flex-start;
+    padding-left: 40px;
+  }
+  .function__icon {
+    padding-left: 0;
+    margin-right: 20px;
+  }
+  .restaurants {
+    padding: 60px 0;
+  }
+  .restaurants__container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .restaurants__title {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 35px;
+    padding: 0;
+  }
   label.restaurants__like:hover .restaurants__like--full {
     opacity: 1;
     transform: scale(1);
@@ -496,12 +578,22 @@ input[type=checkbox].checkbox__like:checked + label.restaurants__like .restauran
     opacity: 0;
     transform: scale(0.6);
   }
+  .cards {
+    -moz-column-gap: 50px;
+         column-gap: 50px;
+    row-gap: 50px;
+    margin-bottom: 0;
+  }
+  .card {
+    width: 100%;
+    height: auto;
+  }
   .footer {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: flex-start;
     align-items: center;
-    padding: 64px 25px 30px;
+    justify-content: flex-start;
+    padding: 64px 25px 30px 25px;
   }
   .footer__logo {
     width: auto;
@@ -509,16 +601,15 @@ input[type=checkbox].checkbox__like:checked + label.restaurants__like .restauran
     font-weight: 400;
     margin: 0;
     margin-left: 70px;
+    margin-bottom: 6px;
   }
   .footer__bloc {
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
     gap: 15px;
     margin: 0;
-  }
-  .footer__bloc p, .footer__bloc i, .footer__bloc a {
-    margin-bottom: 0;
   }
   .footer__bloc__nav {
     margin: 0;
@@ -526,20 +617,25 @@ input[type=checkbox].checkbox__like:checked + label.restaurants__like .restauran
   .footer__bloc__nav__info {
     margin-left: 20px;
   }
-  .footer__bloc__nav p {
+  .footer__bloc p {
     margin-bottom: 0;
   }
-  .footer__bloc__nav__nav--icon {
+  .footer__bloc__nav--icon {
     margin-right: 5px;
+  }
+  .footer__bloc__nav--icon p {
+    margin-bottom: 0;
   }
 }
 /* Extra large devices (large desktop , 1440px and up) */
 @media (min-width: 1440px) {
-  .restaurants__header {
-    padding-bottom: 40px;
+  .function {
+    padding: 30px 20px;
   }
-  .order__btn {
-    width: 186px;
-    height: 50px;
+  .restaurants {
+    padding: 60px 20px;
+  }
+  .cards {
+    margin-bottom: 50px;
   }
 }/*# sourceMappingURL=restaurant.css.map */
